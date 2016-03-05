@@ -1,0 +1,26 @@
+{
+  "name": "nodestudy_crystal",
+  "version": "1.0.0",
+  "description": "my first node project",
+  "main": "index.js",
+  "dependencies": {
+    "mime": "^1.3.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "no test specified"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Crystal2030/nodestudy.git"
+  },
+  "keywords": [
+    "node"
+  ],
+  "author": "Crystal2030",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Crystal2030/nodestudy/issues"
+  },
+  "homepage": "https://github.com/Crystal2030/nodestudy#readme"
+}
