@@ -1,10 +1,12 @@
 /**
  * Created by crystal on 2016/3/5.
  */
-function Person(name){
-    this.name =name;
+function person(){
+    console.log("I'm person1");
 }
-module.exports = Person;
+
+//console.log(module);
+exports.person = person;
 
 //return module.exports;
 
