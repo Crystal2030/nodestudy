@@ -38,7 +38,7 @@ Age: <input type="text" name="age"/><br/>
 
             if(xhr.readyState == 4){
                 if(xhr.status == 200){
-                    var users = xhr.response;
+                    var user = xhr.response;
                     var tbody = document.querySelector('table tbody');
                     var tr = document.createElement('tr');
                     var td1 = document.createElement('td');
