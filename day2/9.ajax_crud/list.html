@@ -6,6 +6,26 @@
     <link rel="stylesheet" href="bootstrap.min.css"/>
 </head>
 <body>
+<form class="form-horizontal">
+    <div class="form-group">
+        <label for="Username" class="col-sm-2 control-label">Username</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="username" placeholder="Please input your name"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="Age" class="col-sm-2 control-label">Age</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="age" placeholder="Please input your age"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="Username" class="col-sm-2 control-label">Username</label>
+        <div class="col-sm-offset-2">
+            <button type="submit" class="btn btn-default">Add</button>
+        </div>
+    </div>
+</form>
 <div class="container-fluid">
     <div class="row">
         <table class="table table-hover">
@@ -14,18 +34,32 @@
                 <th>Age</th>
                 <th>Operations</th>
             </tr>
-            <tr>
-                <td colspan="3">
-                    <button class="btn btn-primary" id="add" onclick="add()">Add</button>
-                    <button class="btn btn-primary" id="edit" onclick="edit()">Edit</button>
-                    <button class="btn btn-primary" id="delete" onclick="deleteUser()">Delete</button>
-                </td>
-            </tr>
+
         </table>
     </div>
 </div>
 </body>
 </html>
+<scritp src="jquery.min.js"></scritp>
 <script>
+    //Add user
+    function add(){
+        var username = $('input[name="username"]').value;
+        var age = $('input[name="age"]').value;
 
+        var user = {
+            username: username,
+            age: age
+        };
+
+        $.ajax({
+            url: '/list',
+            type: 'post',
+            dataType: 'json',
+            data: JSON.parse(user),
+            success: function(data){
+
+            }
+        });
+    }
 </script>
