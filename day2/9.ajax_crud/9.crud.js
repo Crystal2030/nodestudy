@@ -19,6 +19,10 @@ var server = http.createServer(function(request,response){
     var urlObj = url.parse(request.url,true);
     var pathname = urlObj.pathname;
 
+    if(pathname == '/'){
+        pathname = '/list.html';
+    }
+
     if(pathname == '/favicon.ico'){
         response.end('404');
     }
@@ -29,37 +33,73 @@ var server = http.createServer(function(request,response){
             response.end(data);
         })
     }else if(pathname == '/list') {
-        var str = '';
-        request.on('data', function (data) {
-            str += data;
+        fs.readFile('./user.json', function (err, data){
+            if(!err){
+                response.end('{"status":"success", "value":' + data.toString() + '}');
+            }else{
+                response.end('Query failed!')
+            }
         });
-        //服务器根据请求体长度判断是否发送完毕
-        request.on('end', function () {
-            console.log(str);
-            //转成对象追加到用户列表里
-            users.push(JSON.parse(str));
-            response.end(str);
-        })
 
+    }else if(pathname == '/add'){
+        //每当服务器收到客户端发过来的一段数据的时候就会触发data事件
+        var str = '';
+        request.on('data', function(data){
+            str += data.toString();
+        });
+
+        request.on('end', function(){
+            fs.readFile('./user.json', function(err,data){
+                console.log('111',str.toString());
+                users.push(JSON.parse(str.toString()));
+                response.end('{"status":"success", "value":' + str + '}');
+
+                fs.writeFile('./user.json',JSON.stringify(users),[{encoding:'utf-8'},{flag:'a'}], function(err){
+                    if(err){
+                        response.end('{"status":"error"}');
+                    }else{
+                        response.end('{"status":"success"}');
+                    }
+                })
+            })
+        });
+    }else if(pathname == '/edit'){
+
+    }else if(pathname == '/remove'){
+        var id = '';
+        request.on('data', function(data){
+            id = data.toString();
+        });
+
+        request.on('end', function(){
+            fs.readFile('./user.json', function(err, data){
+                if(!err){
+                    console.log('222',id.toString());
+                    //users.push(JSON.parse(str.toString()));
+                    response.end('{"status":"success", "value":' + str + '}');
+                }
+            })
+        })
+    }else{
+        fs.exists('.'+pathname, function(exists){
+            if(exists){
+                fs.readFile('.'+pathname,function(err,data){
+                    //如果读取文件出错了，则也报404错误
+                    if(err){
+                        response.end();
+                    }else{
+                        response.write(data);
+                        response.end();
+                    }
+
+                })
+            }else{
+                response.end();
+            }
+        });
     }
 
-    fs.exists('.'+pathname, function(exists){
-        if(exists){
-            fs.readFile('.'+pathname,function(err,data){
-                console.error(pathname);
-                //如果读取文件出错了，则也报404错误
-                if(err){
-                    response.end();
-                }else{
-                    response.write(data);
-                    response.end();
-                }
 
-            })
-        }else{
-            response.end();
-        }
-    });
 
 });
 
