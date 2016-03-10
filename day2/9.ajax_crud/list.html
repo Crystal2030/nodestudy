@@ -52,19 +52,50 @@
                 var str = '';
                 $.each(data.value, function(index, item){
                     str += '<tr><td>'+ item.username +'</td><td>'+ item.age +'</td>' +
-                            '<td class="col-sm-4"><input type="hidden" name="id" value="'+item.id+'"/>' +
+                            '<td class="col-sm-4">' +
                             '<button type="button" class="btn btn-info" id="edit">Edit</button>' +
-                            '<button type="button" class="btn btn-warning col-sm-offset-1" id="remove">Remove</button>' +
+                            '<button type="button" class="btn btn-warning col-sm-offset-1" id_attr="'+item.id+'" id="remove">Remove</button>' +
                             '</td></tr>';
                 })
                 $('.table').append(str);
+
+                //Remove user
+                $('#remove').on('click', function(){
+                    console.log($(this).attr('id_attr'));
+                    var id = $(this).attr('id_attr');
+                    $.ajax({
+                        url: '/remove',
+                        type: 'post',
+                        data: id,
+                        dataType: 'json',
+                        success: function(data){
+                            if(data.status == 'success'){
+                                console.log('remove success', data.value);
+                                $.each(data.value, function(index, item){
+                                    str += '<tr><td>'+ item.username +'</td><td>'+ item.age +'</td>' +
+                                    '<td class="col-sm-4">' +
+                                    '<button type="button" class="btn btn-info" id="edit">Edit</button>' +
+                                    '<button type="button" class="btn btn-warning col-sm-offset-1" id_attr="'+item.id+'" id="remove">Remove</button>' +
+                                    '</td></tr>';
+                                })
+                                $('.table').append(str);
+                            }
+                        },
+                        error: function(xhr, status, err){
+                            console.error('Add fail' + err);
+                        }
+                    });
+
+
+
+                });
+
             }
         },
         error: function (xhr, status, err) {
             console.error(err);
         }
     });
-    var id = 1;
     //Add user
     $('#add').on('click', function(){
 //        $('.table').show();
@@ -78,8 +109,7 @@
 
         var user = {
             username: username,
-            age: age,
-            id: id++
+            age: age
         };
 
         $.ajax({
@@ -91,7 +121,7 @@
                 if(data.status == 'success'){
                     console.log('add success', data.value);
                     var str = '<tr><td>'+ data.value.username +'</td><td>'+ data.value.age +'</td>' +
-                            '<td class="col-sm-4"><input type="hidden" name="id" value="'+data.value.id+'"/>' +
+                            '<td class="col-sm-4">' +
                             '<button type="button" class="btn btn-info" id="edit">Edit</button>' +
                             '<button type="button" class="btn btn-warning col-sm-offset-1" id="remove">Remove</button>' +
                             '</td></tr>';
@@ -104,31 +134,6 @@
         });
     }
 
-    //Remove user
-
-    $('#remove').on('click', function(){
-        console.log($(this).siblings(input));
-        var id = $('#remove').siblings('input[name="id"]').val();
-        $.ajax({
-            url: '/remove',
-            type: 'post',
-            data: JSON.stringify(id),
-            dataType: 'json',
-            success: function(data){
-                if(data.status == 'success'){
-                    console.log('add success', data.value);
-//                    var str = '<tr><td>'+ data.value.username +'</td><td>'+ data.value.age +'</td>' +
-//                            '<td class="col-sm-4"><input type="hidden" name="id" value="'+data.value.id+'"/>' +
-//                            '<button type="button" class="btn btn-info" id="edit">Edit</button>' +
-//                            '<button type="button" class="btn btn-warning col-sm-offset-1" id="remove">Remove</button>' +
-//                            '</td></tr>';
-                }
-            },
-            error: function(xhr, status, err){
-                console.error('Add fail' + err);
-            }
-        });
-    });
 
     function remove(){
 
