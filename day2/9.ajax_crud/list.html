@@ -97,6 +97,7 @@
                             '<button type="button" class="btn btn-warning col-sm-offset-1 remove" >Remove</button>' +
                             '</td></tr>';
                     $('.table').append(str);
+                    window.location.reload();
                 }
             },
             error: function(xhr, status, err){
@@ -109,8 +110,7 @@
     //Remove user
     function remove(){
         $('.remove').on('click', function(){
-            console.log('remove');
-            $('.table tbody tr:nth-child(2)').remove();
+            $(this).parent().parent().remove();
             var id = $(this).attr('id_attr');
             $.ajax({
                 url: '/remove',
@@ -120,15 +120,6 @@
                 success: function(data){
                     if(data.status == 'success'){
                         console.log('remove success', data.value);
-                        var str = '';
-                        $.each(data.value, function(index, item){
-                            str += '<tr><td>'+ item.username +'</td><td>'+ item.age +'</td>' +
-                                    '<td class="col-sm-4">' +
-                                    '<button type="button" class="btn btn-info" id="edit">Edit</button>' +
-                                    '<button type="button" class="btn btn-warning col-sm-offset-1 remove" id_attr="'+item.id+'" >Remove</button>' +
-                                    '</td></tr>';
-                        })
-//                                $('.table').append(str);
                     }
                 },
                 error: function(xhr, status, err){

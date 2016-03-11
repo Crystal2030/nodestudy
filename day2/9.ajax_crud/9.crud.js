@@ -59,7 +59,7 @@ var server = http.createServer(function(request,response){
                 }
 
                 if (users.length == 0) {
-                    obj.id = "1";
+                    obj.id = 1;
                 } else {
                     obj.id = users[users.length - 1].id + 1;
                 }
@@ -91,10 +91,8 @@ var server = http.createServer(function(request,response){
                             if (data.toString() != '') {
                                 users = JSON.parse(data);
                             }
-                            console.log(idstr);
                             for(var i=0; i<users.length; i++){
                                 if(users[i].id == idstr){
-                                    console.log(9999);
                                     users.splice(i,1);
                                 }
                             }
