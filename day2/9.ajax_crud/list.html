@@ -54,41 +54,12 @@
                     str += '<tr><td>'+ item.username +'</td><td>'+ item.age +'</td>' +
                             '<td class="col-sm-4">' +
                             '<button type="button" class="btn btn-info" id="edit">Edit</button>' +
-                            '<button type="button" class="btn btn-warning col-sm-offset-1" id_attr="'+item.id+'" id="remove">Remove</button>' +
+                            '<button type="button" class="btn btn-warning col-sm-offset-1 remove" id_attr="'+item.id+'">Remove</button>' +
                             '</td></tr>';
                 })
                 $('.table').append(str);
 
-                //Remove user
-                $('#remove').on('click', function(){
-                    console.log($(this).attr('id_attr'));
-                    var id = $(this).attr('id_attr');
-                    $.ajax({
-                        url: '/remove',
-                        type: 'post',
-                        data: id,
-                        dataType: 'json',
-                        success: function(data){
-                            if(data.status == 'success'){
-                                console.log('remove success', data.value);
-                                $.each(data.value, function(index, item){
-                                    str += '<tr><td>'+ item.username +'</td><td>'+ item.age +'</td>' +
-                                    '<td class="col-sm-4">' +
-                                    '<button type="button" class="btn btn-info" id="edit">Edit</button>' +
-                                    '<button type="button" class="btn btn-warning col-sm-offset-1" id_attr="'+item.id+'" id="remove">Remove</button>' +
-                                    '</td></tr>';
-                                })
-                                $('.table').append(str);
-                            }
-                        },
-                        error: function(xhr, status, err){
-                            console.error('Add fail' + err);
-                        }
-                    });
-
-
-
-                });
+                remove();
 
             }
         },
@@ -123,7 +94,7 @@
                     var str = '<tr><td>'+ data.value.username +'</td><td>'+ data.value.age +'</td>' +
                             '<td class="col-sm-4">' +
                             '<button type="button" class="btn btn-info" id="edit">Edit</button>' +
-                            '<button type="button" class="btn btn-warning col-sm-offset-1" id="remove">Remove</button>' +
+                            '<button type="button" class="btn btn-warning col-sm-offset-1 remove" >Remove</button>' +
                             '</td></tr>';
                     $('.table').append(str);
                 }
@@ -135,8 +106,36 @@
     }
 
 
+    //Remove user
     function remove(){
-
+        $('.remove').on('click', function(){
+            console.log('remove');
+            $('.table tbody tr:nth-child(2)').remove();
+            var id = $(this).attr('id_attr');
+            $.ajax({
+                url: '/remove',
+                type: 'post',
+                data: id,
+                dataType: 'json',
+                success: function(data){
+                    if(data.status == 'success'){
+                        console.log('remove success', data.value);
+                        var str = '';
+                        $.each(data.value, function(index, item){
+                            str += '<tr><td>'+ item.username +'</td><td>'+ item.age +'</td>' +
+                                    '<td class="col-sm-4">' +
+                                    '<button type="button" class="btn btn-info" id="edit">Edit</button>' +
+                                    '<button type="button" class="btn btn-warning col-sm-offset-1 remove" id_attr="'+item.id+'" >Remove</button>' +
+                                    '</td></tr>';
+                        })
+//                                $('.table').append(str);
+                    }
+                },
+                error: function(xhr, status, err){
+                    console.error('Add fail' + err);
+                }
+            });
+        });
     }
 
     //Edit user
