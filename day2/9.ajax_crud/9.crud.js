@@ -76,7 +76,36 @@ var server = http.createServer(function(request,response){
             })
         });
     }else if(pathname == '/edit'){
+        var str = '';
+        var strObj = {};
+        request.on('data', function(data){
+            str = data.toString();
+        })
+        request.on('end', function(){
+            fs.readFile('./user.json', function(err, data){
+                if(!err){
+                    strObj = JSON.parse(str);
+                    strObj.id = parseInt(strObj.id);
+                    if (data.toString() != '') {
+                        users = JSON.parse(data);
+                    }
+                    for(var i =0 ; i < users.length; i++){
+                        if(users[i].id == strObj.id){
+                            users[i] = strObj;
+                        }
 
+                    }
+                    response.end('{"status":"success", "value":' + JSON.stringify(users) + '}');
+                }
+                fs.writeFile('./user.json',JSON.stringify(users),'utf8', function(err){
+                    if(err){
+                        response.end('{"status":"error"}');
+                    }else{
+                        response.end('{"status":"success"}');
+                    }
+                })
+            })
+        })
     }else if(pathname == '/remove'){
         var idstr = '';
         request.on('data', function(data){
