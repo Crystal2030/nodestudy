@@ -5,28 +5,23 @@
     <title>List</title>
     <link rel="stylesheet" href="bootstrap.min.css"/>
 </head>
-<body>
-<div class="form-horizontal" id="form">
+<body style="width:80%; margin: 0 auto;">
+<div id="form" style="padding-bottom: 30px;">
+    <h2>Add user</h2>
     <div class="form-group">
-        <label for="Username" class="col-sm-2 control-label">Username</label>
-        <div class="col-sm-6">
-            <input type="text" class="form-control" name="username" placeholder="Please input your name"/>
-        </div>
+        <label for="Username" >Username</label>
+        <input type="text" class="form-control" name="username" placeholder="Please input your name"/>
     </div>
     <div class="form-group">
-        <label for="Age" class="col-sm-2 control-label">Age</label>
-        <div class="col-sm-6">
-            <input type="text" class="form-control" name="age" placeholder="Please input your age"/>
-        </div>
+        <label for="Age" >Age</label>
+        <input type="text" class="form-control" name="age" placeholder="Please input your age"/>
     </div>
-    <div class="form-group">
-        <div class="col-sm-offset-2">
-            <button type="submit" class="btn btn-primary" id="add">Add</button>
-        </div>
+     <button type="submit" class="btn btn-primary" id="add">Add</button>
     </div>
 </div>
 <div class="container-fluid">
     <div class="row">
+        <h2>List all users</h2>
         <table class="table table-hover">
             <tr>
                 <th>Name</th>
