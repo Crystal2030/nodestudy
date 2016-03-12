@@ -66,7 +66,7 @@ var server = http.createServer(function(request,response){
                 users.push(obj);
                 response.end('{"status":"success", "value":' + str + '}');
 
-                fs.writeFile('./user.json',JSON.stringify(users),[{encoding:'utf-8'},{flag:'a'}], function(err){
+                fs.writeFile('./user.json',JSON.stringify(users),'utf-8', function(err){
                     if(err){
                         response.end('{"status":"error"}');
                     }else{
