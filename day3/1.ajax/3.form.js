@@ -61,6 +61,15 @@ http.createServer(function(req,res){
             })
         });
     }else{
+        /**
+         * . 当前目录
+         * ./3.uploader.js 当前目录下的某个文件
+         * / : 1. 如果是在HTML的链接中，代表URL根目录
+         *     2. 如果出现在读文件的时候，则它代表当前盘符的根目录
+         *
+         * 3.uploader.js: 代表当前目录下面的index.js文件 = ./3.uploader.js
+         * .. ：代表上一级目录
+         */
         fs.exists('.'+pathname,function(exists){
             if(exists){
                 //从文件名中获取文件的Content-Type
