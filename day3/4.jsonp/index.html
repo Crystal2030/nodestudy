@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>JSONP</title>
+</head>
+<body>
+<ul id="content">
+
+</ul>
+</body>
+</html>
+<script>
+    function show1(data){
+        console.log(data);
+    }
+    //1.创建一个script元素
+    var script = document.createElement('script');
+    script.src = 'http://localhost:8080/books?callback=show1&name=zfpx4';//show(['node.js','java'])
+    document.body.appendChild(script);
+
+</script>
