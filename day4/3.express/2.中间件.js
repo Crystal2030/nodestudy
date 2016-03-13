@@ -32,6 +32,7 @@ app.use(function(req,res,next){
 app.use('/money',function(req,res,next){
     var start = Date.now();
     res.mny = 100;
+    //res.end('hello');//如果先end了就不会继续执行next了
     next();//往下走
 });
 //省里
