@@ -11,7 +11,22 @@ var app = express();
 app.get('/',function(req,res){
     //send它可以自动判断参数类型,自动转换响应信息，
     //并且自动设置Content-Type
-    res.send('hello world');
+    res.send('home');
+});
+app.get('/hello',function(req,res){
+    //send它可以自动判断参数类型,自动转换响应信息，
+    //并且自动设置Content-Type
+    res.send('get hello');
+});
+app.post('/hello',function(req,res){
+    //send它可以自动判断参数类型,自动转换响应信息，
+    //并且自动设置Content-Type
+    res.send('post hello');
+});
+app.all('/hello',function(req,res){
+    //send它可以自动判断参数类型,自动转换响应信息，
+    //并且自动设置Content-Type
+    res.send('all hello');
 });
 
 //启动服务器
