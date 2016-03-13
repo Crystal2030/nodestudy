@@ -1,4 +1,6 @@
 var http = require('http');
+var querystring = require('querystring');
+var fs = require('fs');
 var users = [];
 /**
  * 1. 客户端把一个用户信息发送给服务器
@@ -26,11 +28,15 @@ http.createServer(function(req,res){
             user = require('querystring').parse(result);
         }else if(contentType =='application/zfpx'){
             //name@zfpx|age@6
-            user = require('querystring').parse(result,'|','@');
+            user = querystring.parse(result,'|','@');
         }
 
         users.push(user);
         res.end(JSON.stringify(users));
     });
+
+    //在服务器端把接收到的请求体保存到文件去。
+
+
 
 }).listen(8080);
