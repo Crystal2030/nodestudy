@@ -6,7 +6,6 @@ var util = require('util');
 
 function Girl(name){
     this.name = name;
-    this._events = {};
 }
 
 util.inherits(Girl, EventEmitter);
