@@ -28,13 +28,38 @@ Person.prototype.emit = function(eventName){
     })
 }
 
+Person.prototype.removeListener = function(eventName,callback){
+    this._events[eventName] = this._events[eventName].filter(function(cb){
+        return cb != callback;
+    });
+}
+
+Person.prototype.once = function(eventName, callback){
+    function callonce(){
+        callback.apply(this, arguments);
+        console.log('this=',new Person);
+        console.log('this=',this);
+        this.removeListener(eventName, callonce);
+    }
+    this.on(eventName, callonce);
+}
+
 var girl = new Person();
-girl.on('长发及腰',function(){
+/*girl.on('长发及腰',function(){
     console.log('哥来娶你可好');
 })
 
 girl.on('长发及腰',function(){
     console.log('记得找我聊聊天');
+});*/
+
+girl.once('hungry', function(what){
+    console.log('Got to eat ' + what);
 });
 
-girl.emit('长发及腰');
+
+
+
+//girl.emit('长发及腰');
+girl.emit('hungry', 'lunch');
+girl.emit('hungry', 'breakfest');
