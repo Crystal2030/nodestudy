@@ -37,7 +37,6 @@
 <script src="jquery.min.js"></script>
 <script>
     //Query
-//    $('.table').hide();
     $.ajax({
         url: '/users',
         type: 'get',
@@ -56,53 +55,7 @@
 
                 remove();
 
-                $('.edit').on('click', function(){
-                    var id = $(this).attr('id_attr');
-
-                    var formTitle = $('.form-title'),
-                            formBtn = $('#form button'),
-                            formDiv = $('#form'),
-                            submitEditBtn= $('<button type="submit" class="btn btn-primary" id="submitEdit">Submit edit</button>'),
-                            usrNameInput = $('input[name="username"]'),
-                            ageInput = $('input[name="age"]'),
-                            usrNameTd = $(this).parent().parent().find('.username'),
-                            ageTd = $(this).parent().parent().find('.age');
-
-                    formTitle.text('Edit user');
-                    formBtn.remove();
-                    formDiv.append(submitEditBtn);
-                    usrNameInput.val(usrNameTd.text());
-                    ageInput.val(ageTd.text());
-
-                    $('#submitEdit').on('click', function(){
-                        var username = usrNameInput.val();
-                        var age = ageInput.val();
-
-                        var user = {
-                            username: username,
-                            age: age,
-                            id: id
-                        };
-
-                        console.log('user',JSON.stringify(user));
-
-                        $.ajax({
-                            url: '/users',
-                            type: 'put',
-                            data: JSON.stringify(user),
-                            dataType: 'json',
-                            success: function(data){
-                                if(data.status == 'success'){
-                                    console.log('Edit success', data.value);
-                                    window.location.reload();
-                                }
-                            },
-                            error: function(xhr, status, err){
-                                console.error('Edit fail' + err);
-                            }
-                        });
-                    });
-                });
+                edit();
 
             }
         },
@@ -110,10 +63,9 @@
             console.error(err);
         }
     });
+
     //Add user
     $('#add').on('click', function(){
-//        $('.table').show();
-//        $('#form').hide();
         add();
     });
 
@@ -149,7 +101,6 @@
         });
     }
 
-
     //Remove user
     function remove(){
         $('.remove').on('click', function(){
@@ -174,7 +125,53 @@
 
     //Edit user
     function edit(){
+        $('.edit').on('click', function(){
+            var id = $(this).attr('id_attr');
 
+            var formTitle = $('.form-title'),
+                    formBtn = $('#form button'),
+                    formDiv = $('#form'),
+                    submitEditBtn= $('<button type="submit" class="btn btn-primary" id="submitEdit">Submit edit</button>'),
+                    usrNameInput = $('input[name="username"]'),
+                    ageInput = $('input[name="age"]'),
+                    usrNameTd = $(this).parent().parent().find('.username'),
+                    ageTd = $(this).parent().parent().find('.age');
+
+            formTitle.text('Edit user');
+            formBtn.remove();
+            formDiv.append(submitEditBtn);
+            usrNameInput.val(usrNameTd.text());
+            ageInput.val(ageTd.text());
+
+            $('#submitEdit').on('click', function(){
+                var username = usrNameInput.val();
+                var age = ageInput.val();
+
+                var user = {
+                    username: username,
+                    age: age,
+                    id: id
+                };
+
+                console.log('user',JSON.stringify(user));
+
+                $.ajax({
+                    url: '/users',
+                    type: 'put',
+                    data: JSON.stringify(user),
+                    dataType: 'json',
+                    success: function(data){
+                        if(data.status == 'success'){
+                            console.log('Edit success', data.value);
+                            window.location.reload();
+                        }
+                    },
+                    error: function(xhr, status, err){
+                        console.error('Edit fail' + err);
+                    }
+                });
+            });
+        });
     }
 
 </script>
