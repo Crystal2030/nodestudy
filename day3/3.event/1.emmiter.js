@@ -1,35 +1,35 @@
 var EventEmitter = require('events');
 var util = require('util');
-function Girl(name){
+/**
+ *
+ */
+function Bell(name){
     this.name = name;
-    EventEmitter.call(this);
 }
-util.inherits(Girl,EventEmitter);
+util.inherits(Bell, EventEmitter);
 
-var girl = new Girl();
-function Boy(name){
-    this.name = name;
-    this.say = function(words){
-        console.log(this.name,words);
-    }
-}
-var xiaoming = new Boy('小明');
-var xiaohua = new Boy('小花');
-//注册监听 事件 订阅
-var m = xiaoming.say.bind(xiaoming,'看上就买吧');
-girl.addListener('看',m);
-//注册监听 事件 订阅
-girl.on('看',xiaohua.say.bind(xiaohua,'喜欢就多看看吧'));
-//发射事件 发布
-girl.emit('看');
-//girl.removeListener('看',m);
-girl.removeAllListeners('看');
-girl.emit('看');
-//如果发射多次事件，只会触发一次
-girl.once('饿了',function(){
-    console.log('吃饭');
+var jinglebell = new Bell('jingle');
+
+//on 和 addListener是一样的
+jinglebell.on('ring', function(){
+    console.log('receive the gift1.');
+});
+jinglebell.addListener('ring', function(){
+    console.log('receive the gift2.');
 });
 
-girl.emit('饿了');
-girl.emit('饿了');
-girl.emit('饿了');
+var drop = function(who){
+    console.log(who + ' dropped the ring');
+}
+jinglebell.once('drop',drop);
+
+
+jinglebell.emit('ring');
+//jinglebell.removeListener('drop', drop);//移除drop监听
+/**
+ * drop事件调用的是once方法，所以即使发射两次drop事件，它也只能执行一次
+ */
+jinglebell.emit('drop','Deer');
+jinglebell.emit('drop', 'The old man');
+
+console.log(jinglebell.listeners('ring'));//2个函数
