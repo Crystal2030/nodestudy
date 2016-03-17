@@ -1,9 +1,9 @@
 /**
  * Created by crystal on 3/16/16.
- * 功能：
- * 1. 用户注册 注册页面
- * 2. 用户登陆 登录页面
- * 3. 登陆成功之后返回欢迎页 欢迎页
+ * Functionalities：
+ * 1. Register
+ * 2. Login
+ * 3. After login redirect to home page
  */
 
 var path = require('path');

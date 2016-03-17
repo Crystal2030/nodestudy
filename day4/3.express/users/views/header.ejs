@@ -11,8 +11,12 @@
 <body>
 <ul class="nav nav-pills">
     <li class="active"><a href="/" title="Home">Home</a></li>
+    <% if (user) { %>
+    <li><a href="/logout" title="Logout">Logout</a></li>
+    <% }else{ %>
     <li><a href="/login" title="Login">Login</a></li>
     <li><a href="/reg" title="Register">Rigester</a></li>
+    <% } %>
 </ul>
 
 <div class="reminder-info">
