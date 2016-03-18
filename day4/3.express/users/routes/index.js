@@ -1,12 +1,15 @@
 /**
  * Created by crystal on 3/16/16.
  */
+var crypto = require('crypto');//core module of nodejs
 var User = require('../models/user.js');
+
 
 module.exports = function(app) {
     app.get('/', function (req, res) {
         res.render('index', {
             title: 'Home',
+            classname: 'active',
             user: req.session.user,
             success: req.flash('success').toString(),
             error: req.flash('error').toString()
@@ -17,6 +20,7 @@ module.exports = function(app) {
     app.get('/reg', function(req, res){
         res.render('reg', {
             title: 'Register',
+            classname: 'active',
             user: req.session.user,
             success: req.flash('success').toString(),
             error: req.flash('error').toString()
@@ -33,6 +37,11 @@ module.exports = function(app) {
             return res.redirect('/reg');
         }
 
+        //create md5 value
+        var hashObj = crypto.createHash('md5'),
+            //Calculates the digest of all of the data passed to be hashed (using the hash.update() method). The encoding can be 'hex', 'binary' or 'base64'.
+            //The Hash object can not be used again after hash.digest() method has been called.
+            password = hashObj.update(req.body.password).digest('hex');
         var newUser = new User({
             name: username,
             password: password,
@@ -64,14 +73,16 @@ module.exports = function(app) {
     app.get('/login', function(req, res){
         res.render('login', {
             title: 'Login',
+            classname: 'active',
             user: req.session.user,
             success: req.flash('success').toString(),
             error: req.flash('error').toString()
         });
     });
     app.post('/login', function(req, res){
-        var username = req.body.username,
-            password = req.body.password;
+        var hashObj = crypto.createHash('md5'),
+            username = req.body.username,
+            password = hashObj.update(req.body.password).digest('hex');
         User.get(username, function(err, user){
             if(!user){
                 req.flash('error', 'User not exists!');
