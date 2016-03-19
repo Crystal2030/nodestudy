@@ -6,6 +6,11 @@ app.set('view engine','ejs');
 //path.resolve  取当前目录的绝对路径
 app.set('views',path.resolve());
 app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.raw());
+
+app.post('/raw', function(req, res){
+    res.send(req.body);
+})
 var users = [{id: 1, name: 'zfpx1',mny:100}, {id: 2, name: 'zfpx2',mny:100}];
 /**
  * 1. 获取所有的用户 curl -v -H 'accept:text/html'  http://localhost:8080/users
