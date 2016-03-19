@@ -1,0 +1,4 @@
+(function(){
+    return typeof arguments;
+})();
+
