@@ -37,10 +37,14 @@ var conditions = {_id : '56ee104ed8734eec2c503cfd'};
 var update = {$set : { name : 'Crystal' }};
 //更新
 // 默认只更新一条，如果要更新匹配到的所有记录的话需要加一个参数 {multi:true}
-PersonModel.update(conditions, update,{multi:true} , function(error){
+/*PersonModel.update(conditions, update,{multi:true} , function(error){
     if(error) {
         console.log(error);
     } else {
         console.log('Update success!');
     }
-});
+});*/
+
+PersonModel.remove({name:'Crystal'}, function(err, docs){
+    console.log(docs);
+})
