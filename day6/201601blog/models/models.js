@@ -2,7 +2,7 @@
  * Created by crystal on 3/21/16.
  */
 var mongoose = require('mongoose');
-var ObjectId = mongoose.Schema.Types.objectId;
+var ObjectId = mongoose.Schema.Types.ObjectId;
 module.exports = {
     User: {
         //User data model
@@ -12,7 +12,7 @@ module.exports = {
     },
     Article:{
         //article data model
-        user: {type: ObjectId, ref: 'User'},
+        user:{type:ObjectId,ref:'User'},
         title: String,
         content: String,
         createAt: {type: Date, default: Date.now}
