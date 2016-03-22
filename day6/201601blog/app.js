@@ -62,6 +62,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(function(req,res,next){
   //res.locals才是真正的渲染模板的对象
   res.locals.user = req.session.user;
+  res.locals.success = req.flash('success').toString();
+  res.locals.error = req.flash('error').toString();
   next();
 });
 

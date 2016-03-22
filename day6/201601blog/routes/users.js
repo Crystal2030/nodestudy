@@ -6,16 +6,13 @@ var router = express.Router();
 
 
 //用户注册
-router.get('/reg', function (req, res, next) {
+router.get('/reg', function (req, res) {
     res.render('user/reg', {
-        title: 'Register',
-        user: req.session.user,
-        success: req.flash('success').toString(),
-        error: req.flash('error').toString()
+        title: 'Register'
     });
 });
 //提交用户注册表单时的处理
-router.post('/reg', function (req, res, next) {
+router.post('/reg', function (req, res) {
     var user = req.body,
         password = user.password,
         repassword = user.repassword;
@@ -44,33 +41,34 @@ router.post('/reg', function (req, res, next) {
 });
 
 //用户注册
-router.get('/login', function (req, res, next) {
+router.get('/login', function (req, res) {
     res.render('user/login', {
-        title: 'Login',
-        user: req.session.user,
-        success: req.flash('success').toString(),
-        error: req.flash('error').toString()
+        title: 'Login'
     });
 });
 //提交用户注册表单时的处理
-router.post('/login', function (req, res, next) {
-    var user = req.body;
-
-    user.password = md5(user.password);
-
-    userModel.findOne(user, function(err, user){
+router.post('/login', function (req, res) {
+    var user = req.body,
+        password = md5(user.password);
+    userModel.findOne(user, function(err, doc){
+        console.log('user',user);
         if(err){
             req.flash('error', err);
+            res.redirect('back');
+        }else{
+            console.log(222);
+            req.session.user = doc;
+            console.log('doc',doc);
+            req.flash('success', 'Login successfully!');
+            res.redirect('/');
         }
-        req.session.user = user;
-        req.flash('success', 'Login successfully!');
-        res.redirect('/');
+
     })
 
 });
 
 //登出
-router.get('/logout', function (req, res, next) {
+router.get('/logout', function (req, res) {
     req.session.user = null;
     res.redirect('/');
 });
