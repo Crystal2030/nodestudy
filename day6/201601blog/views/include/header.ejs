@@ -26,10 +26,13 @@
         <!-- 放置其它的导航条 -->
         <div class="collapse navbar-collapse" id="menus">
             <ul class="nav navbar-nav">
+                <% if(!user){ %>
                 <li class="active"><a href="/users/reg">Register</a></li>
                 <li><a href="/users/login">Login</a></li>
+                <% }else{ %>
                 <li><a href="/articles/add">Post</a></li>
                 <li><a href="/users/logout">Logout</a></li>
+                <% } %>
             </ul>
         </div>
     </div>
