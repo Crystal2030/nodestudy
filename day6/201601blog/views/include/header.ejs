@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><%= title %></title>
     <link href="/lib/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/style.css"/>
 </head>
 <body>
 <!--最外面的容器nav标签，并添加nav-bar样式类，表示这里面属于导航条 -->
@@ -33,4 +34,12 @@
         </div>
     </div>
 </nav>
+<div class="container reminder-info">
+    <% if (success) { %>
+    <p class="bg-success text-success"><%= success %> <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button></p>
+    <% } %>
+    <% if (error) { %>
+    <p class="bg-danger text-danger"><%= error %> <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button></p>
+    <% } %>
+</div>
 <div class="container">

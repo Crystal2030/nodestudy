@@ -1,5 +1,7 @@
 var express = require('express');
 var crypto = require('crypto');//core module of nodejs
+var userModel = require('../models/user');
+
 var router = express.Router();
 
 
@@ -14,10 +16,9 @@ router.get('/reg', function (req, res, next) {
 });
 //提交用户注册表单时的处理
 router.post('/reg', function (req, res, next) {
-    console.log(111);
     var user = req.body,
-        password = req.body.password,
-        repassword = req.body.repassword;
+        password = user.password,
+        repassword = user.repassword;
 
     //check password and confirm_password
     if(password != repassword){
@@ -27,34 +28,51 @@ router.post('/reg', function (req, res, next) {
 
     password = md5(req.body.password);
 
-    var userModel = new Model('User');
-    var userEntity = userModel(user);
-    userEntity.save(function(err, user){
+    userModel.create(user, function(err, doc){
         if(err){
             req.flash('error', err);
-            return res.redirect('back');
+            return res.redirect('/users/reg');
         }else{
-            console.log(user);
+            console.log('doc', doc);
+            req.session.user = doc;//user info store into session
+            req.flash('success', 'Register successfully!');
+            res.redirect('/');
         }
-        req.session.user = user;//user info store into session
-        req.flash('success', 'Register successfully!');
-        res.redirect('/');
+
     })
 
 });
 
 //用户注册
 router.get('/login', function (req, res, next) {
-    res.render('user/login', {title: 'Login'});
+    res.render('user/login', {
+        title: 'Login',
+        user: req.session.user,
+        success: req.flash('success').toString(),
+        error: req.flash('error').toString()
+    });
 });
 //提交用户注册表单时的处理
-router.post('/reg', function (req, res, next) {
+router.post('/login', function (req, res, next) {
+    var user = req.body;
+
+    user.password = md5(user.password);
+
+    userModel.findOne(user, function(err, user){
+        if(err){
+            req.flash('error', err);
+        }
+        req.session.user = user;
+        req.flash('success', 'Login successfully!');
+        res.redirect('/');
+    })
 
 });
 
 //登出
 router.get('/logout', function (req, res, next) {
-
+    req.session.user = null;
+    res.redirect('/');
 });
 
 function md5(value){

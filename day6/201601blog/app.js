@@ -4,9 +4,10 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var flash = require('connect-flash');//The flash is a special area of the session used for storing messages
+var mongoose = require('mongoose');
 var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
-var flash = require('connect-flash');//The flash is a special area of the session used for storing messages
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -20,6 +21,15 @@ app.set('views', path.join(__dirname, 'views'));
 // 设置模板引擎np
 app.set('view engine', 'ejs');
 
+var db = mongoose.connect(settings.url);//connect database
+db.connection.on("error", function (error) {
+  console.log("数据库连接失败：" + error);
+});
+//连接成功会执行open回调
+db.connection.on("open", function () {
+  console.log("数据库连接成功");
+});
+
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
@@ -27,24 +37,38 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 //解析JSON类型的请求请求 通过请求中的Content-Type {}
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(flash());
+/**
+ * Sessions won't work unless you have these 3 in this order:
+ * app.use(express.cookieParser());
+ * app.use(express.session());
+ * app.use(app.router);
+ * 路由和中间件是按照顺序排列依次执行的。如果session放在路由下面，在路由里就结束了，不会往下执行中间件了
+ */
 app.use(cookieParser());
-//静态文件服务中间件 指定静态文件根目录
-app.use(express.static(path.join(__dirname, 'public')));
-
-app.use('/', routes);
-app.use('/users', users);
-app.use('/articles', articles);
-
 app.use(session({
   secret: settings.cookieSecret,//secret 用来防止篡改 cookie
   key: settings.db,//key 的值为 cookie 的名字
   cookie: {maxAge: 1000*60*60*24*30},
   resave: true,
   saveUninitialized: true,
-  Store: new MongoStore({
-    url: settings.url
-  })
+  //指定保存的位置
+  store: new MongoStore({mongooseConnection: mongoose.connection})
 }));
+//静态文件服务中间件 指定静态文件根目录
+app.use(express.static(path.join(__dirname, 'public')));
+
+//配置模板的中间件
+app.use(function(req,res,next){
+  //res.locals才是真正的渲染模板的对象
+  res.locals.user = req.session.user;
+  next();
+});
+
+app.use('/', routes);
+app.use('/users', users);
+app.use('/articles', articles);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

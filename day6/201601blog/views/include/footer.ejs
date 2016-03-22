@@ -1,5 +1,14 @@
 </div>
 <script src="/lib/jquery/jquery.js"></script>
 <script src="/lib/bootstrap/js/bootstrap.js"></script>
+<script>
+    var closeBtn = $('.reminder-info .close'),
+            reminderBox = $('.reminder-info');
+    if(closeBtn){
+        closeBtn.on('click', function(){
+            reminderBox.hide();
+        })
+    }
+</script>
 </body>
 </html>

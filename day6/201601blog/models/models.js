@@ -1,6 +1,7 @@
 /**
  * Created by crystal on 3/21/16.
  */
+/*
 var mongoose = require('mongoose');
 var ObjectId = mongoose.Schema.Types.ObjectId;
 module.exports = {
@@ -17,4 +18,4 @@ module.exports = {
         content: String,
         createAt: {type: Date, default: Date.now}
     }
-}
+}*/
