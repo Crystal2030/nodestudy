@@ -23,7 +23,7 @@ router.post('/reg', function (req, res) {
         return res.redirect('back');
     }
 
-    password = md5(req.body.password);
+    user.password = md5(user.password);
 
     userModel.create(user, function(err, doc){
         if(err){
@@ -48,8 +48,11 @@ router.get('/login', function (req, res) {
 });
 //提交用户注册表单时的处理
 router.post('/login', function (req, res) {
-    var user = req.body,
-        password = md5(user.password);
+    var user = req.body;
+
+    user.password = md5(user.password);
+
+    console.log('password', user.password);
     userModel.findOne(user, function(err, doc){
         console.log('user',user);
         if(err){
