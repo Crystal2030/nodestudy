@@ -50,8 +50,10 @@ router.get('/login', function (req, res) {
 router.post('/login', function (req, res) {
     if(req.body.username && req.body.password){
         var user = req.body;
+        user.password = md5(user.password);
         userModel.findOne(user, function(err, doc){
             if(doc){
+                req.session.user = doc;
                 req.flash('success', 'Login successfully!');
                 res.redirect('/');
             }else{
