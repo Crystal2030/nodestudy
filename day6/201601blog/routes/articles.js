@@ -2,14 +2,16 @@
  * Created by crystal on 3/21/16.
  */
 var express = require('express');
-var router = express.Router();
 var articleModel = require('../models/article');
+var auth = require('../auth');
+var router = express.Router();
 
-router.get('/add', function(req, res){
+
+router.get('/add', auth.checkLogin,  function(req, res){
     res.render('article/add', {title: 'Post article'});
 });
 
-router.post('/add', function(req, res){
+router.post('/add', auth.checkLogin,  function(req, res){
     var article = req.body;
     var user = req.session.user;
     article.user = user._id;

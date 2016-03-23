@@ -1,18 +1,19 @@
 var express = require('express');
 var crypto = require('crypto');//core module of nodejs
 var userModel = require('../models/user');
+var auth = require('../auth');
 
 var router = express.Router();
 
 
 //用户注册
-router.get('/reg', function (req, res) {
+router.get('/reg', auth.checkNotLogin, function (req, res) {
     res.render('user/reg', {
         title: 'Register'
     });
 });
 //提交用户注册表单时的处理
-router.post('/reg', function (req, res) {
+router.post('/reg', auth.checkNotLogin,  function (req, res) {
     var user = req.body,
         password = user.password,
         repassword = user.repassword;
@@ -41,13 +42,13 @@ router.post('/reg', function (req, res) {
 });
 
 //用户注册
-router.get('/login', function (req, res) {
+router.get('/login', auth.checkNotLogin,  function (req, res) {
     res.render('user/login', {
         title: 'Login'
     });
 });
 //提交用户注册表单时的处理
-router.post('/login', function (req, res) {
+router.post('/login', auth.checkNotLogin,  function (req, res) {
     if(req.body.username && req.body.password){
         var user = req.body;
         user.password = md5(user.password);
@@ -68,7 +69,7 @@ router.post('/login', function (req, res) {
 });
 
 //登出
-router.get('/logout', function (req, res) {
+router.get('/logout', auth.checkLogin,  function (req, res) {
     req.session.user = null;
     res.redirect('/');
 });
