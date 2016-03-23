@@ -4,15 +4,15 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var flash = require('connect-flash');//The flash is a special area of the session used for storing messages
-var mongoose = require('mongoose');
-var session = require('express-session');
-var MongoStore = require('connect-mongo')(session);
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var articles = require('./routes/articles');
 var settings = require('./settings');
+var mongoose = require('mongoose');
+var session = require('express-session');
+var MongoStore = require('connect-mongo')(session);
+var flash = require('connect-flash');//The flash is a special area of the session used for storing messages
 
 var app = express();
 
@@ -29,15 +29,6 @@ db.connection.on("error", function (error) {
 db.connection.on("open", function () {
   console.log("数据库连接成功");
 });
-
-// uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-app.use(logger('dev'));
-//解析urlencoded类型的请求请求 通过请求中的Content-Type name=zfpx
-app.use(bodyParser.json());
-//解析JSON类型的请求请求 通过请求中的Content-Type {}
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(flash());
 /**
  * Sessions won't work unless you have these 3 in this order:
  * app.use(express.cookieParser());
@@ -55,6 +46,14 @@ app.use(session({
   //指定保存的位置
   store: new MongoStore({mongooseConnection: mongoose.connection})
 }));
+app.use(flash());
+// uncomment after placing your favicon in /public
+//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+app.use(logger('dev'));
+//解析urlencoded类型的请求请求 通过请求中的Content-Type name=zfpx
+app.use(bodyParser.json());
+//解析JSON类型的请求请求 通过请求中的Content-Type {}
+app.use(bodyParser.urlencoded({ extended: false }));
 //静态文件服务中间件 指定静态文件根目录
 app.use(express.static(path.join(__dirname, 'public')));
 
