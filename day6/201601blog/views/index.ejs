@@ -8,6 +8,7 @@
         <div class="media-body">
             <h4 class="media-heading"><%=article.title%></h4>
             <p><%-article.content%></p>
+            <img src="<%= article.img%>" style="width:100px;" alt=""/>
         </div>
         <div class="media-bottom">
             Author:<%=article.user.username%>
