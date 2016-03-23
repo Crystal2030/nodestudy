@@ -48,26 +48,21 @@ router.get('/login', function (req, res) {
 });
 //提交用户注册表单时的处理
 router.post('/login', function (req, res) {
-    var user = req.body;
-
-    user.password = md5(user.password);
-
-    console.log('password', user.password);
-    userModel.findOne(user, function(err, doc){
-        console.log('user',user);
-        if(err){
-            req.flash('error', err);
-            res.redirect('back');
-        }else{
-            console.log(222);
-            req.session.user = doc;
-            console.log('doc',doc);
-            req.flash('success', 'Login successfully!');
-            res.redirect('/');
-        }
-
-    })
-
+    if(req.body.username && req.body.password){
+        var user = req.body;
+        userModel.findOne(user, function(err, doc){
+            if(doc){
+                req.flash('success', 'Login successfully!');
+                res.redirect('/');
+            }else{
+                req.flash('error', 'Username and password do not match or you do not have an account yet.');
+                res.redirect('back');
+            }
+        })
+    }else{
+        req.flash('error', 'Username or password should not be empty!');
+        return res.redirect('back');
+    }
 });
 
 //登出
