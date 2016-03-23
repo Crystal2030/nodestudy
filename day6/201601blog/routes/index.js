@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var articleModel = require('../models/article');
+var markdown = require('markdown').markdown;
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -11,6 +12,9 @@ router.get('/', function(req, res, next) {
       req.flash('error', error);
       return res.redirect('/');
     }else{
+      docs.forEach(function(article){
+        article.content = markdown.toHTML(article.content);
+      })
       res.render('index', {
         title: 'Home',
         articles: docs
