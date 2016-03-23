@@ -18,6 +18,8 @@ router.post('/reg', auth.checkNotLogin,  function (req, res) {
         password = user.password,
         repassword = user.repassword;
 
+    user.avatar = 'https://secure.gravatar.com/avatar/' + md5(user.email);
+
     //check password and confirm_password
     if(password != repassword){
         req.flash('error', 'The password and its confirm are not the same!');

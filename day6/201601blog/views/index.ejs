@@ -1,13 +1,19 @@
 <%- include include/header %>
+<ul class="media-list">
 <% articles.forEach(function(article){ %>
-<div class="media">
-    <div class="media-left">
-        <a href="#"><img src="" alt="" class="media-object"/></a>
-    </div>
-    <div class="media-body">
-        <h4 class="media-heading"><%=article.title%></h4>
-        <p><%=article.content%></p>
-    </div>
-</div>
+    <li class="media">
+        <div class="media-left">
+            <a href="#"><img src="<%=article.user.avatar%>" alt="<%=article.user.username%>" class="media-object"/></a>
+        </div>
+        <div class="media-body">
+            <h4 class="media-heading"><%=article.title%></h4>
+            <p><%=article.content%></p>
+        </div>
+        <div class="media-bottom">
+            Author:<%=article.user.username%>
+            Post time:<%=article.createAt.toLocaleString()%>
+        </div>
+    </li>
 <%})%>
+</ul>
 <%- include include/footer %>

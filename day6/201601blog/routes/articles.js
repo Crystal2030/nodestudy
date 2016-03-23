@@ -14,7 +14,7 @@ router.get('/add', auth.checkLogin,  function(req, res){
 router.post('/add', auth.checkLogin,  function(req, res){
     var article = req.body;
     var user = req.session.user;
-    article.user = user._id;
+    article.user = user;//user is object
     articleModel.create(article, function(err, doc){
         if(err){
             req.flash('error', err);
