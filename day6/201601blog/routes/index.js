@@ -7,7 +7,6 @@ var markdown = require('markdown').markdown;
 router.get('/', function(req, res, next) {
   //查出来的user是ID，需要通过populate转成对象
   articleModel.find({}).populate("user").exec(function(err, docs){
-    console.log(docs);
     if(err){
       req.flash('error', error);
       return res.redirect('/');

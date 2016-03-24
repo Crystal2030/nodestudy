@@ -1,0 +1,16 @@
+<%- include ../include/header %>
+<div class="panel panel-primary">
+
+    <div class="panel-heading">
+        <%=article.title%>
+    </div>
+    <div class="panel-body">
+        <%-article.content%>
+    </div>
+    <div class="panel-footer">
+        <a href="/articles/edit/<%=article._id%>" class="btn btn-warning">Edit</a>
+        <a href="/articles/remove/<%=article._id%>" class="btn btn-danger">Remove</a>
+    </div>
+
+</div>
+<%- include ../include/footer %>

@@ -6,6 +6,7 @@ var articleModel = require('../models/article');
 var auth = require('../auth');
 var path = require('path');
 var multer = require('multer');
+var markdown = require('markdown').markdown;
 var router = express.Router();
 
 //指定文件元素的存储方式
@@ -37,15 +38,42 @@ router.post('/add', auth.checkLogin, upload.single('img'), function(req, res){
     }
     articleModel.create(article, function(err, doc){
         if(err){
-            console.log(err);
             req.flash('error', err.errors);
             return res.redirect('/articles/add');
         }else{
-            console.log('doc', doc);
             req.flash('success', 'Post successfully!');
             res.redirect('/');
         }
     })
 });
+
+
+router.get('/detail/:_id', auth.checkLogin,  function(req, res){
+    articleModel.findById(req.params._id).exec(function(err, doc){
+        if(err){
+            return res.redirect('/');
+        }else{
+            doc.content = markdown.toHTML(doc.content);
+            res.render('article/detail',{
+                title: 'View article',
+                article: doc
+            });
+        }
+    })
+});
+
+router.get('/remove/:_id', auth.checkLogin, function(req, res){
+    articleModel.remove(req.params._id).exec(function(err, doc){
+        if(err){
+            req.flash('error', err);
+            return res.redirect('back');
+        }else{
+            req.flash('success', 'Remove successfully!');
+            res.redirect('/');
+        }
+    })
+});
+
+
 
 module.exports = router;
