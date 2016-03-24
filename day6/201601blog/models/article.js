@@ -9,7 +9,7 @@ var articleSchema = new mongoose.Schema({
     //User data model
     title:{type:String, required: true},
     content:{type:String, required: true},
-    img: String,
+    img: {type:String},
     createAt: {type:Date, default:Date.now},
     user: {type:ObjectId, ref:'user'}
 });

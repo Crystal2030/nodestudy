@@ -8,11 +8,12 @@
         <div class="media-body">
             <h4 class="media-heading"><%=article.title%></h4>
             <p><%-article.content%></p>
-            <img src="<%= article.img%>" style="width:100px;" alt=""/>
+            <% if(article.img){ %>
+            <img src="<%= article.img%>" style="width:200px;" alt=""/>
+            <% } %>
         </div>
         <div class="media-bottom">
-            Author:<%=article.user.username%>
-            Post time:<%=article.createAt.toLocaleString()%>
+            <strong>Author:</strong> <%=article.user.username%>&nbsp;&nbsp;&nbsp;&nbsp;<strong>Post time:</strong> <%=article.createAt.toLocaleString()%>
         </div>
     </li>
 <%})%>
