@@ -17,30 +17,30 @@ var storage = multer.diskStorage({
     },
     //指定保存的文件名
     filename: function (req, file, cb) {
-        cb(null, Date.now()+ path.extname(file.originalname));
+        cb(null, Date.now() + path.extname(file.originalname));
     }
 });
 
-var upload = multer({ storage: storage });
+var upload = multer({storage: storage});
 
 
 //提交文章数据 里面放置的是文件域的名字
-router.get('/add', auth.checkLogin, function(req, res){
+router.get('/add', auth.checkLogin, function (req, res) {
     res.render('article/add', {title: 'Post article'});
 });
 
-router.post('/add', auth.checkLogin, upload.single('img'), function(req, res){
+router.post('/add', auth.checkLogin, upload.single('img'), function (req, res) {
     var article = req.body;
     var user = req.session.user;
     article.user = user._id;//user is object
-    if(req.file){
-        article.img = '/images/'+req.file.filename;
+    if (req.file) {
+        article.img = '/images/' + req.file.filename;
     }
-    articleModel.create(article, function(err, doc){
-        if(err){
+    articleModel.create(article, function (err, doc) {
+        if (err) {
             req.flash('error', err.errors);
             return res.redirect('/articles/add');
-        }else{
+        } else {
             req.flash('success', 'Post successfully!');
             res.redirect('/');
         }
@@ -48,13 +48,13 @@ router.post('/add', auth.checkLogin, upload.single('img'), function(req, res){
 });
 
 
-router.get('/detail/:_id', auth.checkLogin,  function(req, res){
-    articleModel.findById(req.params._id).exec(function(err, doc){
-        if(err){
+router.get('/detail/:_id', auth.checkLogin, function (req, res) {
+    articleModel.findById(req.params._id).exec(function (err, doc) {
+        if (err) {
             return res.redirect('/');
-        }else{
+        } else {
             doc.content = markdown.toHTML(doc.content);
-            res.render('article/detail',{
+            res.render('article/detail', {
                 title: 'View article',
                 article: doc
             });
@@ -62,18 +62,47 @@ router.get('/detail/:_id', auth.checkLogin,  function(req, res){
     })
 });
 
-router.get('/remove/:_id', auth.checkLogin, function(req, res){
-    articleModel.remove(req.params._id).exec(function(err, doc){
-        if(err){
+router.get('/remove/:_id', auth.checkLogin, function (req, res) {
+    articleModel.remove(req.params._id).exec(function (err, doc) {
+        if (err) {
             req.flash('error', err);
             return res.redirect('back');
-        }else{
+        } else {
             req.flash('success', 'Remove successfully!');
             res.redirect('/');
         }
     })
 });
 
+//edit an article
+router.get('/edit/:_id', auth.checkLogin, function (req, res) {
+    articleModel.findById(req.params._id).exec(function (err, doc) {
+        if (err) {
+            return res.redirect('/');
+        } else {
+            console.log(doc);
+            res.render('article/edit', {
+                title: 'View article',
+                article: doc
+            });
+        }
+    });
+});
 
+router.post('/edit/:_id', auth.checkLogin, function (req, res) {
+    var article = req.body;
+    var conditions = {_id: article._id};
+    var update = {$set: {title: article.title, content: article.content}};
+
+    articleModel.update(conditions, update).exec(function (err, doc) {
+        if (err) {
+            req.flash('error', err);
+            return res.redirect('back');
+        } else {
+            req.flash('success', 'Update successfully!');
+            res.redirect('/');
+        }
+    })
+})
 
 module.exports = router;
