@@ -23,11 +23,11 @@ app.set('view engine', 'ejs');
 
 var db = mongoose.connect(settings.url);//connect database
 db.connection.on("error", function (error) {
-  console.log("数据库连接失败：" + error);
+  console.log("Connect database failed：" + error);
 });
 //连接成功会执行open回调
 db.connection.on("open", function () {
-  console.log("数据库连接成功");
+  console.log("Connect database successfully!");
 });
 /**
  * Sessions won't work unless you have these 3 in this order:
@@ -74,9 +74,9 @@ app.use('/articles', articles);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
+  res.render('404',{
+    title:'404'
+  });
 });
 
 // error handlers
