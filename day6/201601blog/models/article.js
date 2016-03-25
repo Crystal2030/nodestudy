@@ -11,7 +11,8 @@ var articleSchema = new mongoose.Schema({
     content:{type:String, required: true},
     img: {type:String},
     createAt: {type:Date, default:Date.now},
-    user: {type:ObjectId, ref:'user'}
+    user: {type:ObjectId, ref:'user'},
+    comments: [{user:{type:ObjectId,ref:'User'},content:String,createAt:{type: Date, default: Date.now}}]
 });
 
 var articleModel = mongoose.model('article', articleSchema);

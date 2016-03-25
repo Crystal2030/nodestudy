@@ -2,12 +2,14 @@
  * Created by crystal on 3/21/16.
  */
 var express = require('express');
-var articleModel = require('../models/article');
 var auth = require('../auth');
 var path = require('path');
 var multer = require('multer');
 var markdown = require('markdown').markdown;
 var router = express.Router();
+var articleModel = require('../models/article');
+var commentModel = require('../models/comment');
+
 
 //指定文件元素的存储方式
 var storage = multer.diskStorage({
@@ -109,7 +111,7 @@ router.post('/edit/:_id', auth.checkLogin,upload.single('img'), function (req, r
 });
 
 
-//search query
+//search pagination
 router.get('/list/:pageNum/:pageSize', auth.checkLogin, function(req, res){
     var pageNum = parseInt(req.params.pageNum);
     var pageSize = parseInt(req.params.pageSize);
@@ -140,6 +142,22 @@ router.get('/list/:pageNum/:pageSize', auth.checkLogin, function(req, res){
         });
     })
 
+});
+
+//comment
+router.post('/comment', auth.checkLogin, function(req, res){
+    var user = req.session.user;
+    var conditions = {_id:req.body._id};
+    var pushObj = {comments:{user:user._id,content:req.body.content}};
+    articleModel.update(conditions,{$push:pushObj}, function(err, doc){
+        if(err){
+            req.flash('error', err);
+            res.redirect('back');
+        }else{
+            req.flash('success', 'Comment successfully!');
+            res.redirect('back');
+        }
+    })
 });
 
 module.exports = router;
