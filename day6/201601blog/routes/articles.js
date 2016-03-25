@@ -149,7 +149,7 @@ router.post('/comment', auth.checkLogin, function(req, res){
     var user = req.session.user;
     var conditions = {_id:req.body._id};
     var pushObj = {comments:{user:user._id,content:req.body.content}};
-    articleModel.update(conditions,{$push:pushObj}, function(err, doc){
+    articleModel.update(conditions,{$push:pushObj}).populate('user').exec(function(err, doc){
         if(err){
             req.flash('error', err);
             res.redirect('back');
@@ -157,7 +157,7 @@ router.post('/comment', auth.checkLogin, function(req, res){
             req.flash('success', 'Comment successfully!');
             res.redirect('back');
         }
-    })
+    });
 });
 
 module.exports = router;

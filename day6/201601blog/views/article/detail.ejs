@@ -25,14 +25,14 @@
             <li class="media">
                 <div class="media-left">
                     <a href="#">
-                        <img class="media-object" src="<%=comment.user.avatar%>" alt="">
+                        <img class="media-object" src="<%=user.avatar%>" alt="">
                     </a>
                 </div>
-                <div class="meida-body">
+                <div class="media-body">
                     <p class="media-left"><%-comment.content%></p>
                 </div>
                 <div class="media bottom">
-                    <%=comment.user.username%> &nbsp;&nbsp;&nbsp;&nbsp;<%=comment.createAt.toLocalString()%>
+                     <strong><%=user.username%></strong>&nbsp;&nbsp;&nbsp;&nbsp;<%=comment.createAt.toLocaleDateString()%>
                 </div>
             </li>
             <%
