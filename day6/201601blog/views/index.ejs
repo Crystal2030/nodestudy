@@ -18,4 +18,26 @@
     </li>
 <%})%>
 </ul>
+<nav>
+    <ul class="pagination">
+        <% if(pageNum > 1){ %>
+        <li>
+            <a href="/articles/list/<%=pageNum-1%>/<%=pageSize%>?keyword=<%=keyword%>" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+            </a>
+        </li>
+        <% } %>
+
+        <% for(var i = 1;i <= totalPage; i++){ %>
+        <li><a href="/articles/list/<%=i%>/<%=pageSize%>?keyword=<%=keyword%>"><%=i%></a></li>
+        <%  } %>
+        <% if(pageNum < totalPage){ %>
+        <li>
+            <a href="/articles/list/<%=pageNum+1%>/<%=pageSize%>?keyword=<%=keyword%>" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+            </a>
+        </li>
+        <% } %>
+    </ul>
+</nav>
 <%- include include/footer %>

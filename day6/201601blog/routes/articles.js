@@ -111,27 +111,35 @@ router.post('/edit/:_id', auth.checkLogin,upload.single('img'), function (req, r
 
 //search query
 router.get('/list/:pageNum/:pageSize', auth.checkLogin, function(req, res){
+    var pageNum = parseInt(req.params.pageNum);
+    var pageSize = parseInt(req.params.pageSize);
     var query = {};
     if(req.query.keyword){
         req.session.keyword = req.query.keyword;
         query['title'] = new RegExp(req.query.keyword, 'i');
     }
-    articleModel.find(query).populate("user").exec(function(err, docs){
-        if(err){
-            req.flash('error', error);
-            return res.redirect('/');
-        }else{
-            docs.forEach(function(article){
-                article.content = markdown.toHTML(article.content);
-            })
-            res.render('index', {
-                title: 'Home',
-                articles: docs,
-                keyword: req.query.keyword
-            });
-        }
+    articleModel.count(query, function(err, count){
+        articleModel.find(query).skip((pageNum-1)*pageSize).limit(pageSize).sort({createAt:-1}).populate("user").exec(function(err, docs){
+            if(err){
+                req.flash('error', error);
+                return res.redirect('/');
+            }else{
+                docs.forEach(function(article){
+                    article.content = markdown.toHTML(article.content);
+                })
+                res.render('index', {
+                    title: 'Home',
+                    articles: docs,
+                    keyword: req.query.keyword,
+                    pageNum: pageNum,
+                    pageSize: pageSize,
+                    totalPage: Math.ceil(count/pageSize)
+                });
+            }
 
-    });
+        });
+    })
+
 });
 
 module.exports = router;
