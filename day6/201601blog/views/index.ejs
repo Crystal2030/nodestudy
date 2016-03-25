@@ -14,6 +14,8 @@
         </div>
         <div class="media-bottom">
             <strong>Author:</strong> <%=article.user.username%>&nbsp;&nbsp;&nbsp;&nbsp;<strong>Post time:</strong> <%=article.createAt.toLocaleString()%>
+            <br/>
+            <strong>Read:</strong><%=article.pv%> &nbsp;&nbsp;&nbsp;&nbsp;<strong>Comments:</strong><%=article.comments.length%>
         </div>
     </li>
 <%})%>

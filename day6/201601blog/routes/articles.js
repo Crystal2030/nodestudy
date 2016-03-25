@@ -8,8 +8,7 @@ var multer = require('multer');
 var markdown = require('markdown').markdown;
 var router = express.Router();
 var articleModel = require('../models/article');
-var commentModel = require('../models/comment');
-
+var async = require('async');
 
 //指定文件元素的存储方式
 var storage = multer.diskStorage({
@@ -51,17 +50,32 @@ router.post('/add', auth.checkLogin, upload.single('img'), function (req, res) {
 
 
 router.get('/detail/:_id', auth.checkLogin, function (req, res) {
-    articleModel.findById(req.params._id).exec(function (err, doc) {
-        if (err) {
-            return res.redirect('/');
-        } else {
-            doc.content = markdown.toHTML(doc.content);
-            res.render('article/detail', {
-                title: 'View article',
-                article: doc
+    async.parallel([function(callback){
+        articleModel.findById(req.params._id).exec(function (err, doc) {
+            if (err) {
+                return res.redirect('/');
+            } else {
+                doc.content = markdown.toHTML(doc.content);
+                res.render('article/detail', {
+                    title: 'View article',
+                    article: doc
+                });
+            }
+        });
+    },function(callback){
+        articleModel.update({_id:req.params._id},{$inc:{pv:1}},callback);
+    }], function(err, result){
+        if(err){
+            req.flash('error',err);
+            res.redirect('back');
+        }else{
+            res.render('article/detail',{
+                title:'View article',
+                article:result[0]
             });
         }
     })
+
 });
 
 router.get('/remove/:_id', auth.checkLogin, function (req, res) {
