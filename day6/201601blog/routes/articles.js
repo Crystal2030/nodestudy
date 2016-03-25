@@ -80,7 +80,6 @@ router.get('/edit/:_id', auth.checkLogin, function (req, res) {
         if (err) {
             return res.redirect('/');
         } else {
-            console.log(doc);
             res.render('article/edit', {
                 title: 'View article',
                 article: doc
@@ -89,16 +88,20 @@ router.get('/edit/:_id', auth.checkLogin, function (req, res) {
     });
 });
 
-router.post('/edit/:_id', auth.checkLogin, function (req, res) {
+router.post('/edit/:_id', auth.checkLogin,upload.single('img'), function (req, res) {
     var article = req.body;
-    var conditions = {_id: article._id};
-    var update = {$set: {title: article.title, content: article.content}};
-
-    articleModel.update(conditions, update).exec(function (err, doc) {
+    var conditions = {_id: req.params._id};
+    var setObj = {title: article.title, content: article.content};
+    if (req.file) {
+        setObj.img = '/images/' + req.file.filename;
+    }
+    articleModel.update(conditions, {$set: setObj}).exec(function (err, doc) {
         if (err) {
             req.flash('error', err);
             return res.redirect('back');
         } else {
+            console.log(doc);
+            req.flash('success', 'Update successfully!');
             req.flash('success', 'Update successfully!');
             res.redirect('/');
         }
