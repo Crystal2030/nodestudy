@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html ng-app="zfpxMod">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>angular</title>
+</head>
+<body>
+<div ng-controller="zfpxCtrl" class="container" ng-init="discount=1;books=[{name:'node',price:6},{name:'javascript',price:10}]">
+    {{count}}
+    <table class="table table-responsibe">
+        <tbody>
+        <tr>
+            <th>书名</th>
+            <th>价格</th>
+        </tr>
+        <tr ng-repeat="book in books">
+            <td ng-bind="book.name"></td>
+            <td><input type="text" ng-model="book.price"/></td>
+        </tr>
+        </tbody>
+    </table>
+    <table class="table table responsive">
+        <tr>
+            <td>原金额：{{calc()}}</td>
+            <td>折扣：<input type="text" ng-model="discount"/></td>
+            <td>总价格：{{calc()*discount}}</td>
+        </tr>
+    </table>
+</div>
+
+<div class="container" ng-controller="zfpxCtrl">
+    {{count}}
+</div>
+<div class="container" ng-controller="zfpxCtrl">
+    {{count}}
+</div>
+</body>
+</html>
+<script src="angular.js"></script>
+<script>
+    //当引入angular.js之后会在window下挂载一个angular的属性
+    //定义一个模块
+    //第一个参数是模块的名字，第2个参数就是模块依赖的其他模块
+    //给两个参数代表定义一个新模块，一个参数表示获取刚才定义的那个模块
+    //angular.module('zfpxMod')
+    angular.module('zfpxMod', []);
+    angular.module('zfpxMod', []).controller('zfpxCtrl', function($scope,$http){
+        $scope.books = [];
+        //服务是单例的,一旦实例化，到处注入
+        if($http.count){
+            $http.count = $http.count+1;
+        }else{
+            $http.count=1;
+        }
+        console.log($http.count);
+        $http.get('books.json').success(function(result){
+            console.log(result);
+            $scope.books = result;
+        });
+
+        $scope.calc = function(){
+            var sum = 0;
+            $scope.books.forEach(function(book){
+                sum += parseInt(book.price);
+            })
+            return sum;
+        }
+    });
+
+</script>
