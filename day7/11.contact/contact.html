@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html ng-app="fireModule">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>firebase</title>
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css"/>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12" ng-controller="fireController">
+            <!--消息提示框-->
+            <div class="alert alert-success" ng-show="msg">
+                {{msg}}
+            </div>
+
+            <div class="row">
+                <a href="" class="btn btn-default" ng-click="showAddForm()">Add</a>
+                <a href="" class="btn btn-default">Cancel</a>
+                <a href="" class="btn btn-default">Cancel</a>
+            </div>
+
+            <div class="row">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        Name {{contact.name}}
+                        Email {{contact.email}}
+                    </div>
+                </div>
+            </div>
+            <!--增加联系人-->
+            <form ng-submit="addFormSubmit();" ng-show="addFormShow">
+                <h3>Add contactor</h3>
+                <div class="row">
+                    <div class="col-md-12">
+                        <label for="addname">
+                            <input type="text" id="addname" class="form-control" ng-model="contact.name" placeholder="name" required/>
+                        </label>
+                    </div>
+                    <div class="col-md-12">
+                        <label for="addemail">
+                            <input type="email" id="addemail" class="form-control" ng-model="contact.email" placeholder="email" required/>
+                        </label>
+                    </div>
+                    <div class="col-md-12">
+                         <input type="submit" class="btn btn-primary" value="Add"/>
+                    </div>
+                </div>
+            </form>
+            <!--修改联系人-->
+            <form ng-submit="editFormSubmit();" ng-show="editFormShow">
+                <h3>Edit contactor</h3>
+                <div class="row">
+                    <div class="col-md-12">
+                        <label for="name">
+                            <input type="text" id="name" class="form-control" ng-model="curContact.name" placeholder="name" required/>
+                        </label>
+                    </div>
+                    <div class="col-md-12">
+                        <label for="email">
+                            <input type="email" id="email" class="form-control" ng-model="curContact.email" placeholder="email" required/>
+                        </label>
+                    </div>
+                    <div class="col-md-12">
+                         <input type="submit" class="btn btn-primary" value="Add" ng-click="editFormSubmit();"/>
+                    </div>
+                </div>
+            </form>
+
+            <h3>
+                <a href="#">Your contactor: <span class="badge">{{count}}</span></a>
+            </h3>
+            <table class="table table-responsive">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Operation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="contact in contacts">
+                        <td>{{contact.name}}</td>
+                        <td>{{contact.email}}</td>
+                        <td>
+                            <a class="btn btn-warning" href="#" ng-click="showEditForm();">Edit</a>
+                            <a class="btn btn-danger" href="#" ng-click="removeFormSubmit()">Remove</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script src="../angular.js"></script>
+<script src="../angular-route.js"></script>
+<script src="../firebase.js"></script>
+<script src="../angularfire.js"></script>
+<script>
+    angular.module('fireModule', ['firebase']);
+    angular.module('fireModule').controller('fireController', function($scope, $firebaseArray){
+        $scope.contact = {};
+        $scope.count = 0;
+        var base = new Firebase('https://sizzling-heat-3542.firebaseio.com/crystal_contacts');
+        var contactBase = $firebaseArray(base);
+        $scope.contacts = contactBase;
+
+        //$add(value) 增加一个元素
+        //$remove(key) 删除一个元素
+        //$save(key) 保存元素
+        //$getRecord(id) 获取某个元素
+
+        //显示添加联系人的表单
+        $scope.showAddForm = function(){
+            $scope.addFormShow = true;
+        };
+        $scope.addFormSubmit = function(){
+            contactBase.$add($scope.contact).then(function(ref){
+                var id = ref.key();
+                console.log('New saved id',id);
+                $scope.count = $scope.contacts.length;
+                $scope.contact = {};
+                $scope.addFormShow = false;
+                $scope.msg = 'Contactor has been added!'
+            });
+        };
+
+        //删除联系人
+        $scope.removeFormSubmit = function(){
+            var curContact = this.contact;
+            contactBase.$remove(curContact).then(function(){
+                $scope.count = $scope.contacts.length;
+                $scope.msg = 'Remove successfully!'
+            });
+        };
+
+        //显示编辑联系人的表单
+        $scope.showEditForm = function(){
+            $scope.editFormShow = true;
+            $scope.curContact = this.contact;
+        };
+        $scope.editFormSubmit = function(){
+            contactBase.$save($scope.curContact).then(function(){
+                $scope.editFormShow = false;
+                $scope.msg = 'Edit successfully!'
+            })
+        };
+
+
+
+    });
+</script>
