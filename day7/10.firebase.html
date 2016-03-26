@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>firebase</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"/>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12" ng-controller="fireController">
+
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script src="angular.js"></script>
+<script src="angular-route.js"></script>
+<script src="firebase-web.js"></script>
+<script src="angularfire.js"></script>
+<script>
+    angular.module('fireModule', ['firebase']);
+    angular.module('fireModule').controller('fireController', function($scope, $firebaseArray){
+        var base = new Firebase('https://sizzling-heat-3542.firebaseio.com/xxx');
+        var bookBase = $firebaseArray(base);
+        $scope.books = bookBase;
+    });
+</script>
