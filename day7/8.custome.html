@@ -12,7 +12,7 @@
             <td>书名</td>
             <td>删除</td>
         </tr>
-        <tr ng-repeat="book in books">
+        <tr ng-repeat="book in books track by $index">
             <td>{{book}}</td>
             <td><button ng-click="delete($index)">删除</button></td>
         </tr>
