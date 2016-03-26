@@ -7,8 +7,8 @@
 </head>
 <body>
 <ul class="nav nav-pills">
-    <li role="presentation" class="active"><a href="#/index">Home</a></li>
-    <li role="presentation"><a href="#/user">User</a></li>
+    <li role="presentation" class="active"><a href="#/list">List</a></li>
+    <li role="presentation"><a href="#/detail">Detail</a></li>
 </ul>
 <div class="container" ng-view></div>
 </body>
@@ -20,22 +20,32 @@
     //进行路由配置 config方法是angular应用启动调用的第一个方法
     angular.module('zfpxModule').config(function($routeProvider){
         //进行路由的配置
-        $routeProvider.when('/index',{
-            templateUrl:'home.html',//模板
-            controller:'homeController'//控制器 是用来提供数据
-        }).when('/user',{
-            templateUrl:'user.html',
-            controller:'userController'
+        $routeProvider.when('/list',{
+            templateUrl:'list.html',//模板
+            controller:'listController'//控制器 是用来提供数据
+        }).when('/detail/:bookId',{
+            templateUrl:'detail.html',
+            controller:'detailController'
         }).otherwise({
-            redirectTo:'/index'
+            redirectTo:'/list'
         });
     });
 
-    angular.module('zfpxModule').controller('homeController',function($scope){
-        $scope.title = 'home';
+    angular.module('zfpxModule').controller('listController',function($scope,$http){
+        $http.get('books.json').success(function(data){
+            $scope.books = data;
+        });
     });
 
-    angular.module('zfpxModule').controller('userController',function($scope){
-        $scope.title = 'user';
+    angular.module('zfpxModule').controller('detailController',function($scope, $routeParams, $http){
+
+        //从路由中得到ID
+        var bookId = $routeParams.bookId;
+        //通过ajax获得所有的书，并且取得ID对应的书籍对象
+        $http.get('books.json').success(function(data){
+            $scope.book = data.filter(function(book){
+                return book.id == bookId;
+            })[0];
+        });
     })
 </script>
