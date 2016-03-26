@@ -7,7 +7,11 @@
 <body>
 <div ng-controller="zfpxCtrl">
     {{username}}
+    {{age}}
     <input type="text" ng-model="username"/>
+    <div ng-controller="zfpxCtrl">
+        <span ng-init="age=8"></span>
+    </div>
 </div>
 </body>
 </html>
@@ -19,7 +23,8 @@
     //给两个参数代表定义一个新模块，一个参数表示获取刚才定义的那个模块
     //angular.module('zfpxMod')
     angular.module('zfpxMod', []);
-    angular.module('zfpxMod', []).controller('zfpxCtrl', function($timeout,$scope){
+    angular.module('zfpxMod', []).controller('zfpxCtrl', function($rootScope,$timeout,$scope){
+        $rootScope.age = 10;
         //控制器的作业就是给$scope加属性
         $scope.username = 'zfpx';
         //$timeout比原生的setTimeout多了一个刷新视图的操作

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app="cartMod">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>ng-repeat</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"/>
+</head>
+<body ng-controller="cartController">
+<div class="container" ng-init="discount=10;books=[{name:'node',price:6},{name:'javascript',price:10}]">
+    <table class="table table-responsibe">
+        <tbody>
+            <tr>
+                <th>书名</th>
+                <th>价格</th>
+            </tr>
+            <tr ng-repeat="book in books">
+                <td ng-bind="book.name"></td>
+                <td><input type="text" ng-model="book.price"/></td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table responsive">
+        <tr>
+            <td>原金额：{{calc()}}</td>
+            <td>折扣：<input type="text" ng-model="discount"/></td>
+            <td>总价格：{{calc()*discount}}</td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
+<script src="angular.js"></script>
+<script>
+    angular.module('cartMod', []);
+    angular.module('cartMod')
+            .controller('cartController', function($rootScope,$scope){
+                $scope.calc = function(){
+                    var sum = 0;
+                    $scope.books.forEach(function(book){
+                        sum += parseInt(book.price);
+                    })
+                    return sum;
+                }
+            });
+</script>
