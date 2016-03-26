@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app="zfpxModule">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>route</title>
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css"/>
+</head>
+<body>
+<ul class="nav nav-pills">
+    <li role="presentation" class="active"><a href="#/index">Home</a></li>
+    <li role="presentation"><a href="#/user">User</a></li>
+</ul>
+<div class="container" ng-view></div>
+</body>
+</html>
+<script src="../angular.js"></script>
+<script src="../angular-route.js"></script>
+<script>
+    angular.module('zfpxModule', ['ngRoute']);
+    //进行路由配置 config方法是angular应用启动调用的第一个方法
+    angular.module('zfpxModule').config(function($routeProvider){
+        //进行路由的配置
+        $routeProvider.when('/index',{
+            templateUrl:'home.html',//模板
+            controller:'homeController'//控制器 是用来提供数据
+        }).when('/user',{
+            templateUrl:'user.html',
+            controller:'userController'
+        }).otherwise({
+            redirectTo:'/index'
+        });
+    });
+
+    angular.module('zfpxModule').controller('homeController',function($scope){
+        $scope.title = 'home';
+    });
+
+    angular.module('zfpxModule').controller('userController',function($scope){
+        $scope.title = 'user';
+    })
+</script>
