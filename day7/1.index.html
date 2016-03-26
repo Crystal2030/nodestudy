@@ -7,7 +7,7 @@
 <body>
 <div ng-controller="zfpxCtrl">
     {{username}}
-    {{1+1}}
+    <input type="text" ng-model="username"/>
 </div>
 </body>
 </html>
@@ -19,9 +19,13 @@
     //给两个参数代表定义一个新模块，一个参数表示获取刚才定义的那个模块
     //angular.module('zfpxMod')
     angular.module('zfpxMod', []);
-    angular.module('zfpxMod', []).controller('zfpxCtrl', function($scope){
+    angular.module('zfpxMod', []).controller('zfpxCtrl', function($timeout,$scope){
         //控制器的作业就是给$scope加属性
         $scope.username = 'zfpx';
+        //$timeout比原生的setTimeout多了一个刷新视图的操作
+        $timeout(function () {
+            $scope.username = new Date().toLocaleString();
+        });
     });
 
     /*
