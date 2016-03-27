@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="bootstrap.css"/>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    欢迎来到聊天室
+                </div>
+                <div class="panel-body">
+                    <ul class="list-group" id="messageUrl">
+
+                    </ul>
+                </div>
+                <div class="panel-footer">
+                    <div class="row">
+                        <div class="col-md-9 col-xs-10">
+                            <input type="text" class="form-control" id="txtMsg"/>
+                        </div>
+                        <div class="col-md-3 col-xs-2">
+                            <button class="btn btn-default" id="sendBtn">发送</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script src="jquery.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+window.onload = function(){
+    var socket = io.connect('/');
+    socket.on('connect', function(){
+        $('#messageUrl').append('<li class="list-group-item">消息</li>')
+    });
+//    监听服务器发送过来的消息
+    socket.on('message', function(msg){
+        $('#messageUrl').append('<li class="list-group-item">'+msg+'</li>')
+
+    });
+
+    $('#sendBtn').on('click', function(){
+        var message = $('#txtMsg').val();
+        socket.send(message);
+        $('#txtMsg').val('');
+    })
+}
+</script>
