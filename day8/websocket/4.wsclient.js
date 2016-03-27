@@ -9,6 +9,6 @@ ws.on('open', function(){
 
 //监听服务器发回来的消息
 ws.on('message', function(data, flags){
-    console.log(data);
-    console.log(flags.buffer.toString());
+    console.log(data);//服务器回复：你好服务器
+    //console.log(flags.buffer.toString());//服务器回复：你好服务器
 })

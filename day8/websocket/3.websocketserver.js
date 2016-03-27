@@ -12,7 +12,7 @@ var wss = new Server({
 wss.on('connection', function(ws){
     //监听 客户端发送来的数据
     ws.on('message', function(message){
-        console.log('服务器接收到:%s',message);
+        console.log('服务器接收到:%s',message);//服务器接收到:你好服务器
         //服务器端向客户端发送消息
         ws.send('服务器回复：'+ message);
     });
