@@ -7,7 +7,6 @@ app.get('/', function(req, res){
     res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-
 //先创建一个HTTP服务器
 var server = require('http').createServer(app);
 //再创建感觉socket.io服务器
