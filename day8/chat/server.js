@@ -47,4 +47,4 @@ io.on('connection', function(socket){
     });
 });
 //监听端口
-server.listen(80);
+server.listen(5000);
