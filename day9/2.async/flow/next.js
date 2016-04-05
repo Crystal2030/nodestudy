@@ -1,11 +1,11 @@
 var tasks = [
-	function(cb){
+	function(next){
 		console.log(1);
-		cb();
+		next();
 	},
-	function(cb){
+	function(next){
 		console.log(2);
-		cb();
+		next();
 	}
 ];
 
@@ -15,6 +15,9 @@ function next(err, data){
 		throw Error(err);
 	}
 	console.log(data);
+	if(i>=tasks.length){
+		return;
+	}
 	var task = tasks[i++];
 	task(next);
 }
