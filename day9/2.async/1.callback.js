@@ -7,7 +7,7 @@ var content = fs.readFileSync(filename, 'utf8');
 console.log(content);*/
 
 fs.readFile('1.txt','utf8', function(err, data){
-	fs.readFile('2.txt','utf8', function(err, data){
+	fs.readFile(data,'utf8', function(err, data){
 		console.log(data);
 	});
 });
