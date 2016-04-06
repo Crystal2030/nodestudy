@@ -3,6 +3,7 @@ var async = require('async');
 /**
  * 跟串行很像，但是waterfall每个函数产生的返回值都会作为参数传递给第二个参数
  */
+console.time('waterfall cost');
 async.waterfall([
 	function(cb){//第一个没有data参数
 		setTimeout(function(){
@@ -22,4 +23,5 @@ async.waterfall([
 ],function(err, result){
 	console.error(err);
 	console.log(result);
+	console.timeEnd('waterfall cost');
 })

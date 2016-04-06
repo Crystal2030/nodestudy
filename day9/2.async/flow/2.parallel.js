@@ -1,5 +1,9 @@
 /**
- * 并行执行异步任务
+ * 并行执行异步任务:
+ * parallel 的原理是同时并行处理每一个流程,最后汇总结果,如果某一个流程出错就退出
+ *
+ * I need to run multiple tasks that doesn't depend on each other and when they all finish do something else
+ * Then you should use async.parallel.
  * @type {async|exports}
  */
 var async = require('async');

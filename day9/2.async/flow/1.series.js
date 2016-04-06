@@ -1,6 +1,9 @@
 /**
  * 串行执行异步任务:
  * 串行无关联模式要求每一步执行成功后才能执行下一步流程.所以是一个同步编程思想
+ *
+ * I need to run multiple tasks that depends on each other and when they all finish do something else
+ * Then you should use async.series.
  * @type {async|exports}
  */
 var async = require('async');
