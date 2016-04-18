@@ -9,19 +9,26 @@ var Defer = function(){
 	var status = 'pending';//初始态
 	var value;//异步操作的最终的值
 	var callbacks = [];//异步操作成功后的回调
+	var reject_cbs = [];
+	var reject_val;
 	return {
 		//当调用resolve的时候就表示成功了
 		//异步操作完成之后调用，表示操作成功了
 		resolve:function(_value){
 			value = _value;
-			status = 'resolve';
+			status = 'resolved';
 			callbacks.forEach(function(callback){
 				callback(value);
 			});
 			callbacks = undefined;
 		},
-		reject:function(){
-
+		reject:function(_value){
+			reject_val = _value;
+			status = 'rejected';
+			reject_cbs.forEach(function(callback){
+				callback(reject_val);
+			});
+			reject_cbs = undefined;
 		},
 		//就是承诺的对象,它会返回给客户端
 		promise:{
@@ -32,8 +39,12 @@ var Defer = function(){
 					_callback_(value);
 				}
 			},
-			catch:function(){
-
+			catch:function(_callback_){
+				if(reject_cbs){
+					reject_cbs.push(_callback_);
+				}else{
+					_callback_(reject_val);
+				}
 			}
 		}
 	}
@@ -42,7 +53,7 @@ var Defer = function(){
 var defer = Defer();
 var fs = require('fs');
 fs.readFile('11.txt','utf8',function(err,data){
-	//defer.resolve(data);//读取文件完成后调用resolve把状态改为成功
+	//defer.resolve(data);//读取文件完成后调用resolve把状态改为"成功"
 	defer.reject(err);
 })
 
@@ -52,6 +63,6 @@ promise.then(function(data){
 	console.log(1,data);
 });
 //当出错的时候进行的回调
-promise.catch(function(errr){
+promise.catch(function(err){
 	console.log(err);
 });
