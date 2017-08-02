@@ -4,7 +4,7 @@
  * 3.第三方模块
  * @type {exports}
  */
-var gl = require('2.global.js');
+var gl = require('./2.global.js');
 //获取模块的文件的绝对路径
 console.log(__filename);
 //获取当前模块文件的所在目录的绝对路径
