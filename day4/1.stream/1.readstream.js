@@ -1,9 +1,9 @@
 var fs = require('fs');
-//创建可读流
+//创建可读流 可读流只关心是否读到数据，以及读到数据如何处理
 var rs = fs.createReadStream('./index.txt',{
     start:3,
     end:8,
-    highWaterMark:4
+    highWaterMark:4 // 最高水位线，停止从底层资源读取前内部缓冲区最多能存放的字节数。 缺省为64kb
 });
 //设置编码
 rs.setEncoding('utf8');
