@@ -2,16 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="17e9af61-0c39-4d40-984d-ab3125347b4c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/day4/jsHigh/1.对象.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/day4/jsHigh/10.bind.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/day4/jsHigh/11.scope.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/day4/jsHigh/12.destroy.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/day4/jsHigh/12.emitter.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/day4/jsHigh/2.函数.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/day4/jsHigh/3.prototype.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/day4/jsHigh/4.inherit.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/day4/jsHigh/5.上下文对象.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/day4/jsHigh/6.函数的上下文环境.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/day4/jsHigh/7.define.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/day4/jsHigh/8.this.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/day4/jsHigh/9.apply call.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/day4/jsHigh/a.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/day4/jsHigh/b.js" />
     </list>
     <list id="ef0ce988-50dd-41c7-85c5-237128272774" name="ignore changelist" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/nodestudy.iml" afterPath="$PROJECT_DIR$/.idea/nodestudy.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="nodestudy.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <file path="$PROJECT_DIR$/.idea/workspace.xml" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,31 +39,91 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="1.readstream.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/day4/1.stream/1.readstream.js">
+      <file leaf-file-name="5.上下文对象.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/day4/jsHigh/5.上下文对象.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="15" column="23" lean-forward="true" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
+            <state relative-caret-position="20">
+              <caret line="1" column="70" lean-forward="false" selection-start-line="1" selection-start-column="70" selection-end-line="1" selection-end-column="70" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
+      <file leaf-file-name="6.函数的上下文环境.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/day4/jsHigh/6.函数的上下文环境.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="412">
-              <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+            <state relative-caret-position="180">
+              <caret line="9" column="13" lean-forward="true" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="3.writestream.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/day4/1.stream/3.writestream.js">
+      <file leaf-file-name="7.define.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/day4/jsHigh/7.define.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="6" column="4" lean-forward="true" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
+            <state relative-caret-position="40">
+              <caret line="2" column="40" lean-forward="false" selection-start-line="2" selection-start-column="40" selection-end-line="2" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="8.this.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/day4/jsHigh/8.this.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="376">
+              <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="41" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="9.apply call.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/day4/jsHigh/9.apply call.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="140">
+              <caret line="7" column="32" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="23" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="10.bind.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/day4/jsHigh/10.bind.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="11.scope.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/day4/jsHigh/11.scope.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="9" column="24" lean-forward="true" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="12.emitter.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/day4/jsHigh/12.emitter.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="296">
+              <caret line="22" column="5" lean-forward="false" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="12.destroy.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/day4/jsHigh/12.destroy.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="11" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -72,6 +144,7 @@
     <findStrings>
       <find>favicon.ico</find>
       <find>formidable</find>
+      <find>cost:</find>
     </findStrings>
     <dirStrings>
       <dir>D:\2017\study\nodestudy</dir>
@@ -83,38 +156,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/day4/restful/crud.js" />
-        <option value="$PROJECT_DIR$/day3/3.event/5.event.js" />
-        <option value="$PROJECT_DIR$/day3/3.event/5.events.js" />
-        <option value="$PROJECT_DIR$/day3/3.event/cb.js" />
-        <option value="$PROJECT_DIR$/day3/3.event/3.events.js" />
-        <option value="$PROJECT_DIR$/day3/3.event/4.once.js" />
-        <option value="$PROJECT_DIR$/day4/homework2.md" />
-        <option value="$PROJECT_DIR$/day3/3.event/name.txt" />
-        <option value="$PROJECT_DIR$/day3/3.event/age.txt" />
-        <option value="$PROJECT_DIR$/day3/3.event/5.done.js" />
-        <option value="$PROJECT_DIR$/day3/3.event/6.eventdone.js" />
-        <option value="$PROJECT_DIR$/day3/3.event/8.func.js" />
-        <option value="$PROJECT_DIR$/day4/2.nodeclient/3.cross2.js" />
-        <option value="$PROJECT_DIR$/day4/2.nodeclient/3.cross.js" />
-        <option value="$PROJECT_DIR$/day4/restful/user.html" />
-        <option value="$PROJECT_DIR$/day4/2.nodeclient/index.html" />
-        <option value="$PROJECT_DIR$/day4/test/bodyParser.js" />
-        <option value="$PROJECT_DIR$/day4/test/index.html" />
-        <option value="$PROJECT_DIR$/day4/test/request.js" />
-        <option value="$PROJECT_DIR$/day4/test/trueserver.js" />
-        <option value="$PROJECT_DIR$/day4/test/proxy.js" />
-        <option value="$PROJECT_DIR$/day4/2.nodeclient/bodyParser.js" />
-        <option value="$PROJECT_DIR$/day4/2.nodeclient/request.js" />
-        <option value="$PROJECT_DIR$/day4/2.nodeclient/3.proxy.js" />
-        <option value="$PROJECT_DIR$/day4/3.express/6.post.js" />
-        <option value="$PROJECT_DIR$/day4/2.nodeclient/3.trueserver.js" />
-        <option value="$PROJECT_DIR$/day1/zfpx.js" />
-        <option value="$PROJECT_DIR$/day2/8.http/1.server.js" />
-        <option value="$PROJECT_DIR$/day2/8.http/3.获取请求中的数据.js" />
-        <option value="$PROJECT_DIR$/day2/8.http/index.html" />
-        <option value="$PROJECT_DIR$/day2/8.http/4.static file.js" />
-        <option value="$PROJECT_DIR$/day2/8.http/clock.html" />
         <option value="$PROJECT_DIR$/day2/8.http/7.clock.js" />
         <option value="$PROJECT_DIR$/day2/8.http/reg.html" />
         <option value="$PROJECT_DIR$/day2/8.http/8.reg.js" />
@@ -134,6 +175,38 @@
         <option value="$PROJECT_DIR$/day3/4.jsonp/index.html" />
         <option value="$PROJECT_DIR$/day4/1.stream/1.readstream.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$APPLICATION_CONFIG_DIR$/javascript/nodejs/7.10.0/core-modules/fs.js" />
+        <option value="$PROJECT_DIR$/day4/1.stream/4.copy.js" />
+        <option value="$PROJECT_DIR$/day4/2.nodeclient/1.server.js" />
+        <option value="$PROJECT_DIR$/day4/2.nodeclient/2.http_client_json.js" />
+        <option value="$PROJECT_DIR$/day4/2.nodeclient/index.html" />
+        <option value="$PROJECT_DIR$/day4/2.nodeclient/3.cross2.js" />
+        <option value="$PROJECT_DIR$/day4/2.nodeclient/3.trueserver.js" />
+        <option value="$PROJECT_DIR$/day4/2.nodeclient/3.cross.js" />
+        <option value="$PROJECT_DIR$/day4/2.nodeclient/3.proxy.js" />
+        <option value="$PROJECT_DIR$/day4/3.express/1.express.js" />
+        <option value="$PROJECT_DIR$/day4/3.express/2.中间件.js" />
+        <option value="$PROJECT_DIR$/day4/3.express/4.template.js" />
+        <option value="$PROJECT_DIR$/day4/3.express/4.usetemplate.js" />
+        <option value="$PROJECT_DIR$/day4/3.express/5.static.js" />
+        <option value="$PROJECT_DIR$/day4/3.express/6.reg.html" />
+        <option value="$PROJECT_DIR$/day4/3.express/6.post.js" />
+        <option value="$PROJECT_DIR$/day4/jsHigh/1.对象.js" />
+        <option value="$PROJECT_DIR$/day4/jsHigh/2.函数.js" />
+        <option value="$PROJECT_DIR$/day4/jsHigh/require.js" />
+        <option value="$PROJECT_DIR$/day4/jsHigh/a.js" />
+        <option value="$PROJECT_DIR$/day4/jsHigh/b.js" />
+        <option value="$PROJECT_DIR$/day4/jsHigh/3.prototype.js" />
+        <option value="$PROJECT_DIR$/day4/jsHigh/4.inherit.js" />
+        <option value="$PROJECT_DIR$/day4/jsHigh/5.上下文对象.js" />
+        <option value="$PROJECT_DIR$/day4/jsHigh/6.函数的上下文环境.js" />
+        <option value="$PROJECT_DIR$/day4/jsHigh/7.define.js" />
+        <option value="$PROJECT_DIR$/day4/jsHigh/8.this.js" />
+        <option value="$PROJECT_DIR$/day4/jsHigh/9.apply call.js" />
+        <option value="$PROJECT_DIR$/day4/jsHigh/10.bind.js" />
+        <option value="$PROJECT_DIR$/day4/jsHigh/11.scope.js" />
+        <option value="$PROJECT_DIR$/day4/jsHigh/12.emitter.js" />
+        <option value="$PROJECT_DIR$/day4/jsHigh/12.destroy.js" />
       </list>
     </option>
   </component>
@@ -189,6 +262,7 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -211,6 +285,38 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="day5" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="nodestudy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="nodestudy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="day5" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="1.js_quiz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="nodestudy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="nodestudy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="day4" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -229,18 +335,17 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="1.stream" />
+              <option name="myItemId" value="jsHigh" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="D:/云舟logo/ark/refactor" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="options.lastSelected" value="settings.nodejs" />
     <property name="options.splitter.main.proportions" value="0.3" />
@@ -256,32 +361,32 @@
     <property name="javascript.nodejs.core.library.configured.version" value="7.10.0" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\2017\study\nodestudy\day3\1.ajax\imgs" />
-      <recent name="$PROJECT_DIR$/day2/9.ajax_crud" />
-      <recent name="D:\Crystal\Study\nodestudy\day1" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\2017\study\nodestudy\day3\1.ajax" />
       <recent name="$PROJECT_DIR$/day4/2.nodeclient" />
       <recent name="$PROJECT_DIR$/day3/3.event" />
       <recent name="$PROJECT_DIR$/day2/9.ajax_crud" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\2017\study\nodestudy\day3\1.ajax\imgs" />
+      <recent name="$PROJECT_DIR$/day2/9.ajax_crud" />
+      <recent name="D:\Crystal\Study\nodestudy\day1" />
+    </key>
   </component>
-  <component name="RunManager" selected="Node.js.2.pause.js">
-    <configuration default="false" name="1.emmiter.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="1.emmiter.js" working-dir="$PROJECT_DIR$/day3/3.event">
+  <component name="RunManager" selected="Node.js.11.scope.js">
+    <configuration default="false" name="4.inherit.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="4.inherit.js" working-dir="$PROJECT_DIR$/day4/jsHigh">
       <method />
     </configuration>
-    <configuration default="false" name="2.applyEventEmitter.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="2.applyEventEmitter.js" working-dir="$PROJECT_DIR$/day3/3.event">
+    <configuration default="false" name="8.this.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="8.this.js" working-dir="$PROJECT_DIR$/day4/jsHigh">
       <method />
     </configuration>
-    <configuration default="false" name="server.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="server.js" working-dir="$PROJECT_DIR$/day3/4.jsonp">
+    <configuration default="false" name="9.apply call.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="9.apply call.js" working-dir="$PROJECT_DIR$/day4/jsHigh">
       <method />
     </configuration>
-    <configuration default="false" name="1.readstream.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="1.readstream.js" working-dir="$PROJECT_DIR$/day4/1.stream">
+    <configuration default="false" name="10.bind.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="10.bind.js" working-dir="$PROJECT_DIR$/day4/jsHigh">
       <method />
     </configuration>
-    <configuration default="false" name="2.pause.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="2.pause.js" working-dir="$PROJECT_DIR$/day4/1.stream">
+    <configuration default="false" name="11.scope.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="11.scope.js" working-dir="$PROJECT_DIR$/day4/jsHigh">
       <method />
     </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
@@ -345,19 +450,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Node.js.1.emmiter.js" />
-      <item index="1" class="java.lang.String" itemvalue="Node.js.2.applyEventEmitter.js" />
-      <item index="2" class="java.lang.String" itemvalue="Node.js.server.js" />
-      <item index="3" class="java.lang.String" itemvalue="Node.js.1.readstream.js" />
-      <item index="4" class="java.lang.String" itemvalue="Node.js.2.pause.js" />
+      <item index="0" class="java.lang.String" itemvalue="Node.js.4.inherit.js" />
+      <item index="1" class="java.lang.String" itemvalue="Node.js.8.this.js" />
+      <item index="2" class="java.lang.String" itemvalue="Node.js.9.apply call.js" />
+      <item index="3" class="java.lang.String" itemvalue="Node.js.10.bind.js" />
+      <item index="4" class="java.lang.String" itemvalue="Node.js.11.scope.js" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Node.js.2.pause.js" />
-        <item index="1" class="java.lang.String" itemvalue="Node.js.1.readstream.js" />
-        <item index="2" class="java.lang.String" itemvalue="Node.js.server.js" />
-        <item index="3" class="java.lang.String" itemvalue="Node.js.2.applyEventEmitter.js" />
-        <item index="4" class="java.lang.String" itemvalue="Node.js.1.emmiter.js" />
+        <item index="0" class="java.lang.String" itemvalue="Node.js.11.scope.js" />
+        <item index="1" class="java.lang.String" itemvalue="Node.js.10.bind.js" />
+        <item index="2" class="java.lang.String" itemvalue="Node.js.9.apply call.js" />
+        <item index="3" class="java.lang.String" itemvalue="Node.js.8.this.js" />
+        <item index="4" class="java.lang.String" itemvalue="Node.js.4.inherit.js" />
       </list>
     </recent_temporary>
   </component>
@@ -381,7 +486,8 @@
       <workItem from="1490841461114" duration="468000" />
       <workItem from="1491040911608" duration="831000" />
       <workItem from="1501210956012" duration="2381000" />
-      <workItem from="1501465929694" duration="45628000" />
+      <workItem from="1501465929694" duration="62288000" />
+      <workItem from="1502087526977" duration="22424000" />
     </task>
     <task id="LOCAL-00001" summary="1.如果以属性方式的话，用exports module.exports效果一样&#10; 2. 如果需要到处一个引用类型，只使用module.exports">
       <created>1457164793267</created>
@@ -506,7 +612,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49688000" />
+    <option name="totallyTimeSpent" value="88772000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -519,15 +625,15 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1928" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12539515" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3308026" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3253796" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29501083" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32212582" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.54013014" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -586,288 +692,273 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/day4/3.express/6.post.js">
+    <entry file="file://$PROJECT_DIR$/day4/1.stream/1.2.readable.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="8" column="26" lean-forward="false" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
+        <state relative-caret-position="80">
+          <caret line="4" column="10" lean-forward="true" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/day4/2.nodeclient/index.html">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="12" column="34" lean-forward="false" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
+        <state relative-caret-position="412">
+          <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/day4/2.nodeclient/request.js">
+    <entry file="file://$PROJECT_DIR$/day4/1.stream/write.txt" />
+    <entry file="file://$PROJECT_DIR$/day6/201601blog/public/lib/jquery/jquery.slim.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="9" column="14" lean-forward="false" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
+        <state relative-caret-position="207">
+          <caret line="3407" column="16" lean-forward="false" selection-start-line="3407" selection-start-column="16" selection-end-line="3407" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/javascript/nodejs/7.10.0/core-modules/fs.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="1810" column="0" lean-forward="false" selection-start-line="1810" selection-start-column="0" selection-end-line="1810" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day4/3.express/users/public/javascripts/jquery.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="1" column="28640" lean-forward="false" selection-start-line="1" selection-start-column="28640" selection-end-line="1" selection-end-column="28640" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day4/1.stream/3.writestream.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="3" column="9" lean-forward="false" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day4/2.nodeclient/1.server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="30" column="46" lean-forward="true" selection-start-line="30" selection-start-column="44" selection-end-line="30" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day4/2.nodeclient/compare.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day4/1.stream/1.readstream.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="15" column="23" lean-forward="false" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day4/1.stream/4.copy.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="17" column="25" lean-forward="false" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day4/1.stream/5.pipe.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="7" column="14" lean-forward="false" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day4/2.nodeclient/2.http_client_json.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="6" column="18" lean-forward="true" selection-start-line="3" selection-start-column="4" selection-end-line="6" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day4/2.nodeclient/3.cross2.js" />
+    <entry file="file://$PROJECT_DIR$/day4/2.nodeclient/3.trueserver.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="41" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/day4/2.nodeclient/3.proxy.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="9" column="11" lean-forward="false" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="34" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/day4/2.nodeclient/3.trueserver.js">
+    <entry file="file://$PROJECT_DIR$/day4/2.nodeclient/bodyParser.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="8" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day4/2.nodeclient/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="5" column="7" lean-forward="true" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day4/2.nodeclient/3.cross.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="15" column="16" lean-forward="false" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day4/2.nodeclient/request.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="20" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day4/3.express/1.express.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="520">
+          <caret line="26" column="30" lean-forward="false" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day4/3.express/2.中间件.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="44" column="25" lean-forward="true" selection-start-line="44" selection-start-column="25" selection-end-line="44" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day4/3.express/3.params.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="12" column="14" lean-forward="false" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day4/3.express/4.template.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day4/3.express/4.tmpl.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="9" column="7" lean-forward="true" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day4/3.express/4.usetemplate.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
-          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/day4/homework2.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="1320">
-            <caret line="66" column="25" lean-forward="false" selection-start-line="66" selection-start-column="25" selection-end-line="66" selection-end-column="25" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="35" column="36" lean-forward="false" selection-start-line="35" selection-start-column="36" selection-end-line="35" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/day4/3.express/blog/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/day6/201601blog/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="20" column="11" lean-forward="true" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/day1/zfpx.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="29" lean-forward="false" selection-start-line="0" selection-start-column="29" selection-end-line="0" selection-end-column="29" />
+          <caret line="11" column="3" lean-forward="true" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/day2/8.http/1.server.js">
+    <entry file="file://$PROJECT_DIR$/day4/3.express/views/index.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="14" column="28" lean-forward="false" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/day2/8.http/2.server.js">
+    <entry file="file://$PROJECT_DIR$/day4/3.express/public/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day4/3.express/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day4/3.express/public/js/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day4/3.express/5.static.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="7" column="45" lean-forward="false" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day4/3.express/6.reg.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="10" column="29" lean-forward="false" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day4/3.express/6.post.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="260">
-          <caret line="13" column="30" lean-forward="false" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="30" />
+          <caret line="13" column="8" lean-forward="false" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/day2/8.http/3.获取请求中的数据.js">
+    <entry file="file://$PROJECT_DIR$/day4/jsHigh/2.函数.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="22" column="13" lean-forward="false" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="13" />
+        <state relative-caret-position="40">
+          <caret line="2" column="11" lean-forward="true" selection-start-line="2" selection-start-column="11" selection-end-line="2" selection-end-column="11" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/day2/8.http/style.css">
+    <entry file="file://$PROJECT_DIR$/day4/jsHigh/1.对象.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="456">
+          <caret line="39" column="21" lean-forward="false" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/day2/8.http/index.js">
+    <entry file="file://$PROJECT_DIR$/day4/jsHigh/a.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="60">
+          <caret line="3" column="16" lean-forward="true" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/day2/8.http/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="8" column="20" lean-forward="false" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/day2/8.http/4.static file.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="37" column="18" lean-forward="false" selection-start-line="37" selection-start-column="17" selection-end-line="37" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/day2/8.http/5.static_file.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-120">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/day2/8.http/clock.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="27" column="21" lean-forward="true" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
-          <folding>
-            <marker date="1501569251790" expanded="true" signature="219:233" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/day2/8.http/8.reg.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="473">
-          <caret line="30" column="13" lean-forward="false" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/day2/8.http/reg.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="827">
-          <caret line="53" column="13" lean-forward="true" selection-start-line="53" selection-start-column="13" selection-end-line="53" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/day2/8.http/7.clock.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="393">
-          <caret line="26" column="32" lean-forward="false" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/day2/2.static.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/day3/1.ajax/books.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/day3/1.ajax/1.get.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="14" column="42" lean-forward="false" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/day3/1.ajax/querystring.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/day3/1.ajax/2.sever.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="20" column="10" lean-forward="false" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
-          <folding>
-            <marker date="1501653969681" expanded="true" signature="245:1394" ph="{...}" />
-            <marker date="1501653969681" expanded="true" signature="638:1331" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/day3/1.ajax/2.post.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="584">
-          <caret line="69" column="1" lean-forward="false" selection-start-line="69" selection-start-column="1" selection-end-line="69" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/formidable/Readme.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SECOND">
-          <first_editor relative-caret-position="0">
-            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-            <folding>
-              <marker date="1501654369859" expanded="true" signature="1487:2209" ph="{...}" />
-              <marker date="1501654369859" expanded="true" signature="1555:1866" ph="{...}" />
-              <marker date="1501654369859" expanded="true" signature="1680:1847" ph="{...}" />
-              <marker date="1501654369859" expanded="true" signature="4034:4046" ph="{...}" />
-              <marker date="1501654369859" expanded="true" signature="4366:4426" ph="{...}" />
-              <marker date="1501654369859" expanded="true" signature="4406:4422" ph="{...}" />
-              <marker date="1501654369859" expanded="true" signature="4557:4663" ph="{...}" />
-              <marker date="1501654369859" expanded="true" signature="4581:4661" ph="{...}" />
-              <marker date="1501654369859" expanded="true" signature="6100:6103" ph="{...}" />
-              <marker date="1501654369859" expanded="true" signature="6238:6241" ph="{...}" />
-              <marker date="1501654369859" expanded="true" signature="6497:6500" ph="{...}" />
-              <marker date="1501654369859" expanded="true" signature="6662:6665" ph="{...}" />
-              <marker date="1501654369859" expanded="true" signature="6965:6968" ph="{...}" />
-              <marker date="1501654369859" expanded="true" signature="7309:7312" ph="{...}" />
-              <marker date="1501654369859" expanded="true" signature="7372:7375" ph="{...}" />
-            </folding>
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/day3/2.global/1.global.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="19" column="2" lean-forward="true" selection-start-line="19" selection-start-column="2" selection-end-line="19" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/day3/2.global/2.global.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="6" column="1" lean-forward="false" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/day3/2.global/3.setImmediate.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="17" column="17" lean-forward="true" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/day3/2.global/4.util.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="501">
-          <caret line="34" column="38" lean-forward="true" selection-start-line="34" selection-start-column="38" selection-end-line="34" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/day3/2.global/5.process.js">
+    <entry file="file://$PROJECT_DIR$/day4/jsHigh/b.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
@@ -875,39 +966,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/javascript/nodejs/7.10.0/core-modules/events.js">
+    <entry file="file://$PROJECT_DIR$/day4/jsHigh/3.prototype.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="212" column="9" lean-forward="false" selection-start-line="212" selection-start-column="9" selection-end-line="212" selection-end-column="9" />
+        <state relative-caret-position="160">
+          <caret line="8" column="25" lean-forward="true" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/EcmaScript5.js">
+    <entry file="file://$PROJECT_DIR$/day4/jsHigh/4.inherit.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="174" column="26" lean-forward="true" selection-start-line="174" selection-start-column="26" selection-end-line="174" selection-end-column="26" />
+        <state relative-caret-position="20">
+          <caret line="1" column="13" lean-forward="false" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/day3/3.event/temp.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="10" column="5" lean-forward="false" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/day3/3.event/1.emmiter.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="34" lean-forward="false" selection-start-line="0" selection-start-column="28" selection-end-line="0" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/day3/3.event/3.events.js">
+    <entry file="file://$PROJECT_DIR$/day5/1.js_quiz/1.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -915,63 +990,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/day3/3.event/2.EventEmitter.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="18" column="52" lean-forward="false" selection-start-line="18" selection-start-column="44" selection-end-line="18" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/day3/3.event/2.applyEventEmitter.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="15" column="29" lean-forward="true" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/day3/4.jsonp/server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="11" column="5" lean-forward="false" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/day3/4.jsonp/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/day3/1.ajax/3.form.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-72">
-          <caret line="54" column="6" lean-forward="false" selection-start-line="54" selection-start-column="6" selection-end-line="54" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/day3/1.ajax/3.form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="11" column="35" lean-forward="false" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/day3/1.ajax/3.uploader.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="14" column="19" lean-forward="false" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/day4/1.stream/index.txt">
+    <entry file="file://$PROJECT_DIR$/day5/1.js_quiz/2.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -979,42 +998,82 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/day4/1.stream/3.writestream.js">
+    <entry file="file://$PROJECT_DIR$/day4/jsHigh/5.上下文对象.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="6" column="4" lean-forward="true" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
+        <state relative-caret-position="20">
+          <caret line="1" column="70" lean-forward="false" selection-start-line="1" selection-start-column="70" selection-end-line="1" selection-end-column="70" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/day4/1.stream/2.pause.js">
+    <entry file="file://$PROJECT_DIR$/day4/jsHigh/6.函数的上下文环境.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="31" column="9" lean-forward="false" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="9" />
+        <state relative-caret-position="180">
+          <caret line="9" column="13" lean-forward="true" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/day4/1.stream/1.2.readable.js">
+    <entry file="file://$PROJECT_DIR$/day4/jsHigh/7.define.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="4" column="10" lean-forward="true" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
+        <state relative-caret-position="40">
+          <caret line="2" column="40" lean-forward="false" selection-start-line="2" selection-start-column="40" selection-end-line="2" selection-end-column="40" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/day4/1.stream/1.readstream.js">
+    <entry file="file://$PROJECT_DIR$/day4/jsHigh/8.this.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="15" column="23" lean-forward="true" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
+        <state relative-caret-position="376">
+          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="41" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/EcmaScript.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="412">
-          <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+        <state relative-caret-position="198">
+          <caret line="435" column="0" lean-forward="false" selection-start-line="435" selection-start-column="0" selection-end-line="435" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day4/jsHigh/9.apply call.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="7" column="32" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="23" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day4/jsHigh/10.bind.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day4/jsHigh/11.scope.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="9" column="24" lean-forward="true" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day4/jsHigh/12.emitter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="22" column="5" lean-forward="false" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day4/jsHigh/12.destroy.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="11" selection-end-column="15" />
           <folding />
         </state>
       </provider>
