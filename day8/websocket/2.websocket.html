@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
 <head lang="en">
     <meta charset="UTF-8">
@@ -9,15 +9,18 @@
 </body>
 </html>
 <script>
-    var xhr = new XMLHttpRequest();
-    setInterval(function(){
+
+    function query(){
+        var xhr = new XMLHttpRequest();
         xhr.open('GET', '/data', true);
         xhr.onreadystatechange = function(){
             if(xhr.readyState==4&&xhr.status==200){
                 document.querySelector('#content').innerHTML = xhr.responseText;
-                query();
+                query();//递归调用一次
             }
         }
         xhr.send();
-    }, 1000);
+
+    }
+
 </script>
